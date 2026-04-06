@@ -29,6 +29,73 @@
     </header>
 
     <section class="project-section">
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Game Framework Architecture</h3>
+          <ul>
+            <li>GameInstance for persistent cross-level state and global game flow management</li>
+            <li>GameMode handling match rules, player spawning, and session initialization</li>
+            <li>GameState for shared match data replicated to all clients in real-time</li>
+            <li>PlayerController managing input, camera, and player-specific UI updates</li>
+            <li>PlayerState tracking individual player score, stats, and gameplay progression</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Multiplayer & Session System</h3>
+          <ul>
+            <li>Session-based multiplayer flow with dedicated menu and lobby maps</li>
+            <li>Travel map for seamless transitions between menu and gameplay levels</li>
+            <li>Player list and server browser for session discovery and joining</li>
+            <li>Replicated player state for synchronized gameplay across all clients</li>
+            <li>Server-authoritative word validation and score calculation</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Word Game System</h3>
+          <ul>
+            <li>Data-driven word list loaded from configuration files</li>
+            <li>Word-formation logic with valid word validation against dictionary</li>
+            <li>Drop-letter system allowing players to discard and redraw letters</li>
+            <li>Score calculation based on word length, letter values, and multipliers</li>
+            <li>Turn-based gameplay flow with timed actions and player rotation</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>UI & Menu Flow</h3>
+          <ul>
+            <li>Main menu with session creation and joining options</li>
+            <li>Lobby system showing connected players and game readiness</li>
+            <li>In-game HUD displaying current word, score, and player turn indicators</li>
+            <li>Pause menu with settings and return-to-menu options</li>
+            <li>Loading screen with progress tracking during map transitions</li>
+            <li>End-game screen displaying final scores and leaderboard rankings</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Progression & Data</h3>
+          <ul>
+            <li>Save-game system for player progress and statistics persistence</li>
+            <li>Leaderboard tracking with accuracy metrics and win/loss records</li>
+            <li>Player profile data including gameplay history and achievements</li>
+            <li>ScriptableObject-driven configuration for game parameters and balance</li>
+            <li>Audio system with sound effects and UI feedback cues</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Blueprint Implementation</h3>
+          <ul>
+            <li>Entirely Blueprint-driven gameplay logic for rapid iteration</li>
+            <li>Reusable blueprint components for UI widgets and game mechanics</li>
+            <li>Event-driven communication between systems and UI updates</li>
+            <li>Animation blueprints for character and UI state transitions</li>
+            <li>Material instances for consistent visual styling across the interface</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
       <h2>Images</h2>
       <div class="project-gallery" aria-label="Word Dash screenshots">
         <img src="../../assets/Screenshots/Word Dash/Screenshot 2026-04-05 215451.png" alt="Word Dash screenshot 1" loading="lazy" />
