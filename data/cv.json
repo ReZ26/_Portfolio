@@ -1,7 +1,7 @@
 ﻿{
   "raw_pdf_path": "ATS CV.pdf",
   "contact": "Shubham Bajaj\nBihar, India\n+91-8789896883\nshubhambajaj3526@gmail.com\nlinkedin.com/in/shubham--bajaj",
-  "summary": "Game Developer with 3 years of experience in Unreal Engine and Unity, building rewind systems, multiplayer gameplay, and polished player experiences.",
+  "summary": "Specialized Gameplay Programmer. Built production-grade combat systems, multiplayer architectures (EOS/Netcode), and player-centric mechanics using Unreal Engine 5 (C++/Blueprints). Proven expertise in systems design, state management, and performant gameplay at scale.",
   "skills": [
     "Unreal Engine 5 (C++, Blueprints)",
     "Unity (C#)",
@@ -120,8 +120,8 @@
       "download": "https://drive.google.com/file/d/1XuO6Yjj8IeXFzfi7K7IWf9BLmHmuNFM4/view?usp=sharing"
     },
     {
-      "title": "Paint Runner",
-      "description": "Unity 2D action game with dynamic painting mechanics, vibrant visual feedback, and engaging progression system.",
+      "title": "It's Me Pico",
+      "description": "Unity 2023 competitive territory-control mobile game with tile ownership mechanics, adaptive AI, quest systems, daily rewards, and complete monetization integration for shipped mobile gameplay.",
       "image": "assets/Screenshots/Paint Runner/Screenshot_20260405_161250_It's Me Pico.jpg.jpeg",
       "demo": "projects/paint-runner/",
       "source": "",
@@ -129,15 +129,16 @@
     },
     {
       "title": "Slimey Jump",
-      "description": "Unity platformer featuring smooth jump mechanics, slime-based physics interactions, and challenging level design.",
+      "description": "Unity 6 vertical endless platformer with drag-jump mechanics, procedural generation, card-based progression, quest system, shop economy, live leaderboards, and hybrid idle mode with offline progression.",
       "image": "assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211023.png",
       "demo": "projects/slimey-jump/",
       "source": "",
-      "engine": "Unity"
+      "engine": "Unity",
+      "video": "https://shubham-bajaj.itch.io/slime-game"
     },
     {
       "title": "Bubble Trap",
-      "description": "Puzzle-action Unity game with bubble mechanics, strategic gameplay elements, and satisfying visual effects.",
+      "description": "Unity 6 2D action-platformer with bubble-based combat mechanics, enemy AI systems, reward-driven progression, and multi-level gameplay across three playable levels.",
       "image": "assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033347.png",
       "demo": "projects/bubble-trap/",
       "source": "",
@@ -145,7 +146,7 @@
     },
     {
       "title": "Word Game",
-      "description": "Unity word-based gameplay experience combining puzzle mechanics with engaging UI/UX for competitive word-based challenges.",
+      "description": "Location-themed word puzzle game combining core word mechanics with meta progression, economy systems, room interactions, NPC dialogue, and collectible rewards in a travel-based experience.",
       "image": "assets/Screenshots/Word Game/1.jpeg",
       "demo": "projects/word-game/",
       "source": "",
@@ -153,11 +154,12 @@
     },
     {
       "title": "Surprise Sprint",
-      "description": "Dynamic Unity runner game with unpredictable obstacles, power-up systems, and responsive character controls.",
+      "description": "Dynamic Unity 6 endless runner with procedurally generated platforms, power-up systems, event-driven architecture, and persistent progression via PlayerPrefs.",
       "image": "assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204535.png",
       "demo": "projects/surprise-sprint/",
       "source": "",
-      "engine": "Unity"
+      "engine": "Unity",
+      "video": "https://youtu.be/Xo9sye7HXSI"
     }
   ],
   "education": "Bachelor of Engineering - Computer Science (Graphics And Gaming), Chandigarh University, Mohali, Punjab, IN (2022-2026) — CGPA: 8.41"

@@ -20,9 +20,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unreal Engine Project</p>
+      <p class="project-label">Unreal Engine | ALS Character System</p>
       <h1 class="project-title">Isles Of Echoes On Cybertrom</h1>
-      <p class="project-about"><strong>Overview:</strong> A third-person character project in Unreal Engine built on the Advanced Locomotion System (ALS). It's extended with weapon handling (rifle/pistol), layered animations, interaction systems, and damage logic, creating a responsive, game-ready character framework for combat and traversal.</p>
+      <p class="project-about"><strong>Overview:</strong> Advanced character framework built on ALS with weapon handling, layered animations, interaction systems, and combat-ready damage logic.</p>
       <div class="project-actions">
         <a class="btn primary" href="https://drive.google.com/drive/folders/1U-bXF7hFeeuFArOaMZmsjs0-0R1298MB?usp=sharing" target="_blank" rel="noopener noreferrer">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -30,7 +30,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Locomotion System</h3>
+          <ul>
+            <li>ALS (Advanced Locomotion System) movement foundation</li>
+            <li>Smooth state transitions between movement states</li>
+            <li>Layered animation system for complex locomotion</li>
+            <li>Responsive input handling with acceleration/deceleration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Weapon System</h3>
+          <ul>
+            <li>Rifle and pistol mechanics with unique animations</li>
+            <li>Weapon equip/unequip state management</li>
+            <li>Aiming offset system for different stances</li>
+            <li>Animation blueprint switching per weapon type</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Animation Architecture</h3>
+          <ul>
+            <li>Dedicated animation blueprints per weapon (Rifle, Pistol, Unarmed)</li>
+            <li>Layered animation system for flexible state blending</li>
+            <li>Hit reaction and combat-specific animations</li>
+            <li>Smooth transitions between animation states</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Gameplay Systems</h3>
+          <ul>
+            <li>Interface-based damage system (BPI_Damageable)</li>
+            <li>Interaction framework for world objects</li>
+            <li>Health and damage type enums</li>
+            <li>Combat feedback and hit response logic</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Visual Presentation</h3>
+          <ul>
+            <li>Material system for character and weapon appearance</li>
+            <li>Particle effects for combat and movement</li>
+            <li>VFX support for weapon fire and impacts</li>
+            <li>UI widgets for character information display</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Project Organization</h3>
+          <ul>
+            <li>Modular folder structure for scalability</li>
+            <li>Shared material and animation libraries</li>
+            <li>Content organized by feature domain</li>
+            <li>Clean asset naming conventions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Isles Of Echoes On Cybertrom screenshots">
         <img src="../../assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191107.png" alt="Isles Of Echoes On Cybertrom screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191118.png" alt="Isles Of Echoes On Cybertrom screenshot 2" loading="lazy" />

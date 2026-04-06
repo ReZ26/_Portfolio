@@ -19,9 +19,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unity Engine Project</p>
+      <p class="project-label">Unity 6 | 2D Vertical Endless Platformer</p>
       <h1 class="project-title">Slimey Jump</h1>
-      <p class="project-about"><strong>Overview:</strong> A charming platformer built in Unity featuring a slime protagonist with unique physics-based movement. The game combines smooth jump mechanics with slime-specific interactions, creating engaging level design and challenging progression.</p>
+      <p class="project-about"><strong>Overview:</strong> 2D vertical endless platformer with drag-and-release jump mechanics, procedural platform generation, camera pressure system, card-based progression, shop economy, daily quests, leaderboard integration, and idle mode with offline rewards.</p>
       <div class="project-actions">
         <a class="btn primary" href="https://shubham-bajaj.itch.io/slime-game" target="_blank" rel="noopener noreferrer">Play Game</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -29,7 +29,82 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Core Platformer Mechanics</h3>
+          <ul>
+            <li>Drag-and-release jump control with trajectory preview visualization</li>
+            <li>Cling logic for wall/platform attachment and movement variants</li>
+            <li>Health tracking and player death flow with revive system</li>
+            <li>Card effect application for permanent mechanic buffs</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Camera & Difficulty System</h3>
+          <ul>
+            <li>Dynamic camera pressure moving upward with off-screen grace period</li>
+            <li>Difficulty scaling through score milestones and speed progression</li>
+            <li>Off-screen death handling with grace timer enforcement</li>
+            <li>Score-based difficulty event broadcasting to other systems</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Procedural Generation</h3>
+          <ul>
+            <li>Object pooling for platform and wall spawning efficiency</li>
+            <li>Weighted difficulty-based spawn rules (static/moving/trap/small platforms)</li>
+            <li>Dynamic trap and obstacle introduction as score increases</li>
+            <li>Procedural wall patterns with increasing complexity</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Economy & Progression</h3>
+          <ul>
+            <li>Score system with multiplier and combo logic based on height</li>
+            <li>Coin spawning (single drops and pattern-based clusters)</li>
+            <li>In-run coin economy with resource management</li>
+            <li>Revive mechanics via coins and rewarded ads integration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Card & Quest Systems</h3>
+          <ul>
+            <li>Card-based progression with rarity levels and upgrade paths</li>
+            <li>Permanent effect application to gameplay mechanics</li>
+            <li>Daily and weekly quest systems with reward claiming</li>
+            <li>Automatic UTC reset timers for quest management</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Profile & Online Features</h3>
+          <ul>
+            <li>Encrypted player profile data with save/load persistence</li>
+            <li>High-score tracking and leaderboard integration</li>
+            <li>Live leaderboard with score submission and ranking display</li>
+            <li>Google Apps Script backend for remote leaderboard communication</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Shop & Customization</h3>
+          <ul>
+            <li>Shop flow with item and skin purchasing systems</li>
+            <li>Purchase confirmation UI with economy validation</li>
+            <li>Inventory management and customization UI</li>
+            <li>Currency flow integration with game economy</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Idle Mode & Offline Progression</h3>
+          <ul>
+            <li>Separate idle scene flow with collector mechanics</li>
+            <li>Building/generator upgrades for offline reward production</li>
+            <li>Offline reward accumulation with time-based calculations</li>
+            <li>Auto-collect option with save/load persistence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Slimey Jump screenshots">
         <img src="../../assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211023.png" alt="Slimey Jump screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211038.png" alt="Slimey Jump screenshot 2" loading="lazy" />
@@ -40,18 +115,26 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-description">Slimey Jump is a carefully crafted platformer that leverages slime physics to create unique gameplay opportunities. Players control a gelatinous protagonist that can stretch, bounce, and adapt to environmental challenges. The game features carefully tuned jump mechanics, responsive controls, and clever level design that teaches players the slime's unique abilities.</p>
+      <p class="project-description">Slimey Jump is a 2D vertical endless platformer that combines arcade action with deep progression systems. Players navigate upward through procedurally generated platforms using drag-and-release jump mechanics with trajectory preview, while managing dynamic camera pressure that increases difficulty. The game features a complete progression ecosystem including coin-based economy, card-based permanent buffs, daily/weekly quests, shop customization, live leaderboards with online submission, and a hybrid idle mode for offline reward generation. The architecture supports multiple gameplay layers: moment-to-moment platformer action, meta progression through cards and quests, and long-term retention through idle mechanics and cosmetic customization.</p>
     </section>
 
     <section class="project-section">
       <h2>What I Have Done</h2>
-      <ul class="project-details-list">
-        <li>Developed slime-based physics and movement systems with Unity's 2D Rigidbody2D</li>
-        <li>Created responsive jump mechanics with variable jump heights and timing</li>
-        <li>Designed level progression with escalating difficulty and new mechanics introduction</li>
-        <li>Implemented collision detection and interaction systems for environmental puzzles</li>
-        <li>Built UI systems for level selection, score tracking, and pause menus</li>
-        <li>Created particle systems and visual feedback for slime interactions</li>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Built core endless vertical platformer loop with drag-and-release jump aiming and trajectory prediction</li>
+        <li>Implemented dynamic camera pressure with off-screen grace period and death handling system</li>
+        <li>Built procedural platform and wall generation with object pooling and difficulty-weighted spawn rules</li>
+        <li>Added trap variants and movement platform types with increasing complexity as score rises</li>
+        <li>Implemented score system with multiplier/combo logic and milestone-based difficulty scaling</li>
+        <li>Added coin spawning mechanics (single drops and pattern-based clusters) with economy integration</li>
+        <li>Implemented revive system using both in-game coins and rewarded ads integration</li>
+        <li>Built encrypted player profile save/load system with high-score persistence and validation</li>
+        <li>Integrated live leaderboard with score submission via Google Apps Script backend</li>
+        <li>Implemented card-based progression with rarity levels, upgrades, and permanent effect application</li>
+        <li>Built daily and weekly quest systems with reward claiming and automatic UTC reset timers</li>
+        <li>Created shop flow with item/skin purchasing, confirmation UI, and inventory management</li>
+        <li>Developed idle mode with separate scene, collector mechanics, upgrades, and offline progression</li>
+        <li>Integrated audio system with event-triggered sounds for gameplay and state transitions</li>
       </ul>
     </section>
   </main>

@@ -18,9 +18,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unity Engine Project</p>
+      <p class="project-label">Unity 6 | Endless Runner Mechanics</p>
       <h1 class="project-title">Surprise Sprint</h1>
-      <p class="project-about"><strong>Overview:</strong> A dynamic runner game built in Unity that keeps players on their toes with unpredictable obstacles and exciting power-up systems. The game features responsive character controls, escalating difficulty, and satisfying progression mechanics.</p>
+      <p class="project-about"><strong>Overview:</strong> 2D endless runner with procedurally generated platforms, power-up systems, responsive controls, and persistent progression tracking.
       <div class="project-actions">
         <a class="btn primary" href="https://shubham-bajaj.itch.io/surprise-sprint" target="_blank" rel="noopener noreferrer">Play Game</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -28,7 +28,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Core Gameplay Loop</h3>
+          <ul>
+            <li>Continuous forward movement with input-based jump mechanics</li>
+            <li>Dash ability with cooldown management and coroutine handling</li>
+            <li>Collision-based game over detection and state management</li>
+            <li>Score tracking and high-score persistence via PlayerPrefs</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Event Bus Architecture</h3>
+          <ul>
+            <li>Central Actions.cs with static event channels (OnGravity, OnPickup, OnTimer, OnGameOver)</li>
+            <li>Decoupled gameplay-UI communication through event subscription</li>
+            <li>Reduced inter-system coupling for maintainable codebase</li>
+            <li>State changes broadcast to all interested systems simultaneously</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Procedural Level Generation</h3>
+          <ul>
+            <li>GroundSpawner with randomized platform X/Y gap variation</li>
+            <li>Object pooling via ObjectPooler for performance optimization</li>
+            <li>GroundDestroyer for cleanup when segments pass threshold</li>
+            <li>Infinite procedural generation for endless runner experience</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Power-Up System</h3>
+          <ul>
+            <li>Trigger-based random effect selection (size buff, debuff, reverse gravity)</li>
+            <li>Timed lifecycle management with countdown tracking</li>
+            <li>SFX triggers and visual feedback via PowerUpUI</li>
+            <li>Event emission for cross-system power-up awareness</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>UI & Menu Systems</h3>
+          <ul>
+            <li>Main menu flow with scene management</li>
+            <li>Pause/settings menu with runtime configuration</li>
+            <li>Resolution, fullscreen, and graphics quality controls</li>
+            <li>Volume persistence through PlayerPrefs + AudioMixer integration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Audio & Visual Integration</h3>
+          <ul>
+            <li>Background audio pause/resume on game state changes</li>
+            <li>Audio stop on game over with proper cleanup</li>
+            <li>CameraMovement following player delta position</li>
+            <li>PostProcessingEffects with vignette toggling for gravity state</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Surprise Sprint screenshots">
         <img src="../../assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204535.png" alt="Surprise Sprint screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204651.png" alt="Surprise Sprint screenshot 2" loading="lazy" />
@@ -39,18 +96,20 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-description">Surprise Sprint is an adrenaline-pumping runner game that emphasizes unpredictability and player reaction. With randomly generated obstacles, powerful power-ups, and dynamic difficulty scaling, each run feels fresh and challenging. The game rewards skill, quick reflexes, and strategic power-up usage while maintaining a fun, accessible gameplay experience.</p>
+      <p class="project-about">Surprise Sprint is a 2D endless runner built in Unity 6 focusing on responsive, replayable gameplay with lightweight architecture. The player continuously moves forward, jumping across randomized platforms while managing a dash ability and interacting with timed power-ups. The game features a main menu, in-game pause/settings UI with audio and graphics controls, score tracking, and persistent high-score storage.</p>
     </section>
 
     <section class="project-section">
       <h2>What I Have Done</h2>
-      <ul class="project-details-list">
-        <li>Implemented responsive character controller with smooth movement and jumping</li>
-        <li>Created procedural obstacle generation system for varied gameplay</li>
-        <li>Developed power-up systems with visual and audio feedback</li>
-        <li>Built difficulty scaling and progression systems</li>
-        <li>Implemented collision detection and hit feedback systems</li>
-        <li>Created UI for score tracking, high scores, and game over screens</li>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Implemented core player gameplay loop with forward running, jump mechanics, and dash cooldown system</li>
+        <li>Built procedural level generation with randomized platform spawning and object pooling for performance</li>
+        <li>Created power-up system with buff/debuff/gravity variations including duration management and audio-visual feedback</li>
+        <li>Developed game state UI systems for score, high score, power-up labels, and effect countdown timers</li>
+        <li>Built complete menu and settings systems with graphics, resolution, and fullscreen options</li>
+        <li>Implemented event-driven architecture using central Actions.cs for decoupled system communication</li>
+        <li>Integrated camera follow logic and contextual audio control across pause/game-over states</li>
+        <li>Implemented persistent high-score and volume settings via PlayerPrefs with AudioMixer integration</li>
       </ul>
     </section>
   </main>

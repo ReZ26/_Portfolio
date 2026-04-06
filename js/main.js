@@ -1,6 +1,6 @@
 ﻿﻿// ===== Typing Effect =====
 const typedTextEl = document.querySelector('.typed-text');
-const phrases = ['gameplay systems.', 'combat mechanics.', 'multiplayer experiences.', 'immersive worlds.'];
+const phrases = ['combat systems.', 'multiplayer architectures.', 'responsive player mechanics.', 'scalable gameplay frameworks.'];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -606,3 +606,4 @@ window.addEventListener('pageshow', () => {
   const overlay = document.getElementById('loading-sequence');
   if (overlay) overlay.remove();
 });
+

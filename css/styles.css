@@ -2399,6 +2399,84 @@ main, .site-header, .site-footer, .engine-corner { position: relative; z-index: 
   box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
 }
 
+/* ===== Technical Details Section ===== */
+.technical-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.technical-section {
+  background: rgba(10, 14, 39, 0.6);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.technical-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), transparent);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.technical-section:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.15), inset 0 0 15px rgba(0, 217, 255, 0.05);
+}
+
+.technical-section:hover::before {
+  opacity: 1;
+}
+
+.technical-section h3 {
+  font-family: var(--heading);
+  font-size: 1.1rem;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 1;
+}
+
+.technical-section ul {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.technical-section li {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.technical-section li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.technical-section:hover li {
+  color: var(--text);
+}
+
+
 .project-section ul.project-about,
 .project-section ol.project-about {
   list-style: disc;

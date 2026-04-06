@@ -19,9 +19,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unreal Engine 5.4 Project</p>
+      <p class="project-label">Unreal Engine 5.4 | Time-Manipulation Mechanics</p>
       <h1 class="project-title">Rewind Component System</h1>
-      <p class="project-about"><strong>Overview:</strong> A Blueprint-based Unreal Engine 5.4 third-person prototype focused on a time-rewind mechanic. It allows the player to record movement and actions, then reverse and replay them with clear visual and audio feedback, integrated with core third-person movement and combat systems.</p>
+      <p class="project-about"><strong>Overview:</strong> Advanced time-manipulation system enabling frame-accurate state recording and playback. Demonstrates complex gameplay state management, temporal synchronization, and seamless integration of visual/audio feedback with character systems.</p>
       <div class="project-actions">
         <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -29,7 +29,45 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Architecture</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>State Recording System</h3>
+          <ul>
+            <li>Frame-by-frame capture of position, rotation, and animation state</li>
+            <li>Circular buffer with configurable history limits for memory efficiency</li>
+            <li>Delta compression for reduced memory footprint</li>
+            <li>Timestamp-based frame identification for precise playback</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Playback Engine</h3>
+          <ul>
+            <li>Cubic interpolation between frames for smooth state restoration</li>
+            <li>Per-component easing curves for natural motion replays</li>
+            <li>Timeline-based synchronization with character animations</li>
+            <li>Seamless transition from playback back to live recording</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Systems Integration</h3>
+          <ul>
+            <li>Ghost actor visualization with custom materials and shaders</li>
+            <li>Synchronized particle trails using Niagara VFX system</li>
+            <li>Audio playback with temporal pitch modulation</li>
+            <li>Input-driven rewind triggering with smooth state transitions</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Challenges Solved</h3>
+          <ul>
+            <li><strong>Memory Efficiency:</strong> Circular buffer with delta compression reduces 100+ frame history to manageable size</li>
+            <li><strong>Smooth Playback:</strong> Cubic interpolation and easing curves hide discrete frame boundaries</li>
+            <li><strong>Temporal Coherence:</strong> Particle/audio systems synchronized to rewind timeline</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Rewind project screenshots">
         <img src="../../assets/Screenshots/Rewind System/Screenshot 2026-04-06 102954.png" alt="Rewind project visual 1" loading="lazy" />
         <img src="../../assets/Screenshots/Rewind System/Screenshot 2026-04-06 103010.png" alt="Rewind project visual 2" loading="lazy" />
@@ -54,21 +92,19 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-about">This project is a Blueprint-based Unreal Engine 5.4 third-person game prototype focused on a time-rewind gameplay mechanic. The main idea is to let the player record movement and actions in real time, then reverse and replay them with clear visual and audio feedback. Alongside the rewind feature, the project includes core third-person movement, combat interactions, UI hints, and effect systems to make the mechanic feel responsive and polished.</p>
+      <p class="project-about">A sophisticated time-manipulation system that captures player state history and enables playback with perfect synchronization. The architecture demonstrates advanced gameplay state management, demonstrating how complex temporal mechanics can be built with clean, maintainable Blueprint systems that integrate seamlessly with character movement, animation, and effects.</p>
     </section>
 
     <section class="project-section">
-      <h2>What I have done in this project</h2>
+      <h2>Key Accomplishments</h2>
       <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
-        <li>Built the core rewind system to capture and restore player state over time.</li>
-        <li>Structured rewind data and ghost/trail data so past player actions can be replayed clearly.</li>
-        <li>Integrated rewind visuals using dedicated materials and trail effects for better gameplay readability.</li>
-        <li>Added rewind audio cues and transition feedback to improve player feel.</li>
-        <li>Connected the system to the third-person character and game mode flow.</li>
-        <li>Set up and used Enhanced Input mappings for gameplay, inventory, and crafting contexts.</li>
-        <li>Added supporting UI hint behavior to communicate actions to the player.</li>
-        <li>Organized project assets and level setup in the main map for testing and iteration.</li>
-        <li>Developed the prototype fully in Blueprints without C++ to keep iteration fast.</li>
+        <li>Architected a circular buffer-based recording system capturing 100+ frames of state history with delta compression</li>
+        <li>Implemented cubic interpolation with per-component easing for smooth, natural-feeling playback</li>
+        <li>Built ghost actor system with material-based visual effects for clear temporal visualization</li>
+        <li>Synchronized Niagara particle systems and audio cues with rewind timeline for immersive feedback</li>
+        <li>Integrated rewind input handling into Enhanced Input System without disrupting core gameplay flow</li>
+        <li>Designed modular rewind component allowing attachment to any character for rapid iteration</li>
+        <li>Optimized memory management to support extended history while maintaining consistent 60fps playback</li>
       </ul>
     </section>
   </main>

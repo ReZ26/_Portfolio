@@ -19,9 +19,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unity Engine Project</p>
+      <p class="project-label">Unity 6 | 2D Action-Platformer</p>
       <h1 class="project-title">Bubble Trap</h1>
-      <p class="project-about"><strong>Overview:</strong> An engaging puzzle-action game built in Unity that combines strategic thinking with fast-paced gameplay. Players manipulate bubbles to solve puzzles and progress through increasingly complex challenges while enjoying satisfying visual effects.</p>
+      <p class="project-about"><strong>Overview:</strong> 2D action-platformer where players use bubble-based combat mechanics to trap enemies, combine bubbles strategically, and pop trapped enemies for rewards. Features platformer movement, bubble lifecycle system, melee/ranged enemy AI, and reward-driven progression.</p>
       <div class="project-actions">
         <a class="btn primary" href="https://drive.google.com/file/d/1cNzXhPa7kWTm0vW5IG1_v5xBtCUH_5g4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -29,7 +29,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Player Controller & Movement</h3>
+          <ul>
+            <li>Horizontal movement with responsive input handling</li>
+            <li>Jump mechanics with animation state transitions (idle/walk/jump/hurt/death)</li>
+            <li>Facing-direction flip for directional control</li>
+            <li>Health tracking with event-driven callbacks for UI updates</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Bubble Mechanic System</h3>
+          <ul>
+            <li>Left-click bubble spawn at cursor world position with visual feedback</li>
+            <li>Bubble growth when interacting with existing bubbles for merge behavior</li>
+            <li>Enemy trapping based on relative collider size comparison</li>
+            <li>Bubble timeout and destruction with pop effects and particle feedback</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Enemy AI Systems</h3>
+          <ul>
+            <li>Melee enemy AI with player chase and delayed attack coroutine patterns</li>
+            <li>Ranged enemy AI with chase, projectile shooting, and health tracking</li>
+            <li>Enemy spawner with timed waves and adaptive spawn interval scaling</li>
+            <li>Boss enemy variant with health visualization and damage feedback</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Projectile & Interaction</h3>
+          <ul>
+            <li>Projectile behavior with interactions for player collision</li>
+            <li>Bubble collision and deflection mechanics</li>
+            <li>World collision detection and cleanup on impact</li>
+            <li>Damage application to player and boss enemies</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Reward & Progression</h3>
+          <ul>
+            <li>Reward item drops from defeated enemies with collection system</li>
+            <li>Point pickup feedback effects and score UI updates</li>
+            <li>Level score threshold triggers for win condition</li>
+            <li>Health-based loss condition and game over flow</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>UI & Game State Management</h3>
+          <ul>
+            <li>Score UI with event-driven updates from point collection</li>
+            <li>Health UI reflecting player damage and state changes</li>
+            <li>Boss health slider with damage-driven visual updates</li>
+            <li>Level-end controller managing win/lose panels and scene transitions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Bubble Trap screenshots">
         <img src="../../assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033347.png" alt="Bubble Trap screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033449.png" alt="Bubble Trap screenshot 2" loading="lazy" />
@@ -40,18 +97,24 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-description">Bubble Trap is a innovative puzzle-action game that challenges players to think strategically about bubble placement and interactions. The game features bubble physics, chain reactions, and satisfying visual feedback that creates an addictive gameplay loop. Each level presents new mechanics and challenges that build upon the core bubble manipulation system.</p>
+      <p class="project-description">Bubble Trap is a 2D action-platformer where players use bubble-based combat mechanics to control the arena. The core concept transforms environmental space into a tactical weapon: instead of direct attacks, players place bubbles strategically to trap enemies inside larger bubbles. Bubble lifetime and scaling limits force quick decision-making. The game loop centers on movement, timing, and arena control—avoid enemy pressure, create bubbles strategically, and collect dropped rewards to increase score and clear levels. Each level features melee and ranged enemies with distinct behaviors, a boss encounter with health visualization, and reward-driven progression toward victory conditions.</p>
     </section>
 
     <section class="project-section">
       <h2>What I Have Done</h2>
-      <ul class="project-details-list">
-        <li>Implemented bubble physics and collision detection systems</li>
-        <li>Created chain reaction mechanics with visual feedback</li>
-        <li>Designed progressive level systems with escalating complexity</li>
-        <li>Built puzzle interaction and solution validation systems</li>
-        <li>Developed particle effects for bubble popping and interactions</li>
-        <li>Created UI systems for level progression and scoring</li>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Designed and implemented the main gameplay loop around a bubble trap mechanic for arena control</li>
+        <li>Built player movement and animation state logic for 2D platformer character (idle/walk/jump/hurt/death)</li>
+        <li>Implemented complete bubble lifecycle: spawn, grow, merge, trap, release, and pop with visual feedback</li>
+        <li>Added two enemy archetypes (melee chaser and ranged shooter) with different combat patterns</li>
+        <li>Implemented projectile behavior and interactions with player, bubbles, and environment</li>
+        <li>Built reward-drop and pickup flow tied to score progression and level completion</li>
+        <li>Implemented health and score event systems with integrated UI updates and visual feedback</li>
+        <li>Created level completion and game-over flow with restart, next level, and menu navigation</li>
+        <li>Added boss health visualization and damage-driven UI updates for ranged enemy encounters</li>
+        <li>Implemented timed enemy spawning with adaptive spawn intervals for sustained challenge</li>
+        <li>Added supporting systems: camera follow, moving platforms, audio transitions, and pause/tutorial gating</li>
+        <li>Set up multi-scene navigation architecture with main menu, level select, and three playable levels</li>
       </ul>
     </section>
   </main>

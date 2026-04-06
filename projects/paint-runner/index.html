@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Paint Runner - Project Details</title>
+  <title>It's Me Pico - Project Details</title>
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/theme.css">
   <link rel="icon" href="../../assets/icons/unity.png" type="image/png">
@@ -18,9 +18,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unity Engine Project</p>
-      <h1 class="project-title">Paint Runner</h1>
-      <p class="project-about"><strong>Overview:</strong> A vibrant 2D action game built in Unity where players unleash dynamic painting mechanics combined with engaging progression systems. The game features vibrant visual feedback and challenging gameplay that keeps players engaged throughout.</p>
+      <p class="project-label">Unity 2023 | Competitive Territory-Control Mobile</p>
+      <h1 class="project-title">It's Me Pico</h1>
+      <p class="project-about"><strong>Overview:</strong> Fast-paced competitive territory-control mobile game where players paint floor tiles to claim territory against AI opponents. Features tile stealing mechanics, power-ups, adaptive AI difficulty, quest systems, daily rewards, and monetization systems designed for shipped mobile gameplay.</p>
       <div class="project-actions">
         <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -28,8 +28,65 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
-      <div class="project-gallery" aria-label="Paint Runner screenshots">
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Core Gameplay Systems</h3>
+          <ul>
+            <li>Tile ownership and scoring loop with event-driven updates</li>
+            <li>Game state transitions (countdown, active play, game over) with winner resolution</li>
+            <li>Real-time tile ownership changes triggered by player/AI movement</li>
+            <li>Score calculation with tile count and territory bonuses</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>AI & Difficulty Scaling</h3>
+          <ul>
+            <li>NavMesh-based AI movement with sensing and target selection</li>
+            <li>Adaptive difficulty scaling from level progression and player win streak</li>
+            <li>AI behavior prioritizing high-value targets (power-ups, opponent tiles)</li>
+            <li>Dynamic opponent strength matching player performance</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Power-Up System</h3>
+          <ul>
+            <li>Power-up spawning flow with configurable spawn patterns</li>
+            <li>IPowerUp interface for decoupled effect implementation</li>
+            <li>Multiple power-up types altering match outcomes</li>
+            <li>Integration with gameplay effects and tile ownership</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Quest & Progression Systems</h3>
+          <ul>
+            <li>Daily and weekly quest systems with activation and reset timing</li>
+            <li>Quest progress tracking and claim logic with reward distribution</li>
+            <li>DateTime-based scheduling for automatic reset windows</li>
+            <li>Level progression tied to AI difficulty and reward scaling</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Retention & Monetization</h3>
+          <ul>
+            <li>Daily reward streak system to improve player retention</li>
+            <li>Lives system with regeneration timers and premium currency cost</li>
+            <li>Monetization integration (rewarded ads, currency economy, shop)</li>
+            <li>Progression-linked incentives and milestone rewards</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Data & Persistence</h3>
+          <ul>
+            <li>Lightweight PlayerPrefs storage for economy and streaks</li>
+            <li>JSON serialization for structured quest runtime state</li>
+            <li>Cross-scene persistence via singleton managers with DontDestroyOnLoad</li>
+            <li>ScriptableObject-driven configuration for gameplay data</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+      <div class="project-gallery" aria-label="It's Me Pico screenshots">
         <img src="../../assets/Screenshots/Paint Runner/Screenshot_20260405_161250_It's Me Pico.jpg.jpeg" alt="Paint Runner screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Paint Runner/Screenshot_20260405_161309_It's Me Pico.jpg.jpeg" alt="Paint Runner screenshot 2" loading="lazy" />
         <img src="../../assets/Screenshots/Paint Runner/Screenshot_20260405_161345_It's Me Pico.jpg.jpeg" alt="Paint Runner screenshot 3" loading="lazy" />
@@ -39,18 +96,26 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-description">Paint Runner is a dynamic 2D action game that combines intuitive movement mechanics with innovative painting-based gameplay. Players navigate through vibrant levels leaving trails of color while overcoming obstacles and enemies. The game emphasizes responsive controls, visual feedback, and satisfying progression systems that reward player skill and creativity.</p>
+      <p class="project-description">It's Me Pico is a competitive territory-control mobile game where the main goal is to control more tiles than an AI opponent before the match ends. The game starts with an arena of neutral paintable tiles—as the player or AI moves over tiles, ownership changes in real time and the score updates dynamically. Beyond the core loop, the game includes daily and weekly quest systems for engagement, a daily reward streak system for retention, multiple power-up types that alter match outcomes, level progression with AI difficulty scaling, and complete monetization systems including rewarded ads, currency economy, lives, and shop. This project demonstrates gameplay programming and production-level system integration suitable for a shipped mobile game.</p>
     </section>
 
     <section class="project-section">
       <h2>What I Have Done</h2>
-      <ul class="project-details-list">
-        <li>Built core 2D movement and painting mechanics using Unity's physics system</li>
-        <li>Implemented dynamic visual feedback systems with particle effects and color systems</li>
-        <li>Created progression and difficulty scaling systems for engaging gameplay</li>
-        <li>Designed UI/UX for menus, HUD, and player feedback elements</li>
-        <li>Optimized performance for smooth 60 FPS gameplay on mobile and desktop</li>
-        <li>Integrated audio systems for sound effects and music feedback</li>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Built tile ownership and scoring loop around event-driven updates for real-time gameplay</li>
+        <li>Implemented game state transitions (countdown, active play, game over) with winner resolution logic</li>
+        <li>Developed quest runtime system with daily/weekly activation, progress tracking, claims, reset timing, and save/load</li>
+        <li>Implemented power-up spawning flow and IPowerUp interface for decoupled effect integration</li>
+        <li>Integrated adaptive AI balancing tied to level progression and player win streak performance</li>
+        <li>Implemented monetization-related systems integration with reward logic and economy hooks</li>
+        <li>Built retention systems including daily rewards, lives system, and progression-linked incentives</li>
+        <li>Designed manager-driven architecture with singleton pattern and DontDestroyOnLoad for cross-scene persistence</li>
+        <li>Implemented NavMesh-based AI movement with sensing and target prioritization for opponent behavior</li>
+        <li>Built lightweight PlayerPrefs storage for economy values and JSON serialization for quest state</li>
+        <li>Integrated Google Mobile Ads and LevelPlay monetization systems for rewarded ads support</li>
+        <li>Contributed to mobile optimization through event-driven architecture and careful lifecycle management</li>
+        <li>Implemented ScriptableObject-driven configuration for quests, enemy stats, and power-up parameters</li>
+        <li>Built data persistence with DateTime-based scheduling for automatic daily and weekly reset windows</li>
       </ul>
     </section>
   </main>

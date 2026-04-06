@@ -19,9 +19,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unity Engine Project</p>
+      <p class="project-label">Unity | Location-Based Word Puzzle</p>
       <h1 class="project-title">Word Game</h1>
-      <p class="project-about"><strong>Overview:</strong> A competitive word-based game built in Unity that combines puzzle mechanics with engaging UI/UX. Players compete in fast-paced word challenges while enjoying a polished interface and rewarding progression system.</p>
+      <p class="project-about"><strong>Overview:</strong> Location-themed word puzzle game where players travel across destinations, solve progressively difficult word levels, and manage economy-driven meta progression with room systems, NPCs, and collectible rewards.</p>
       <div class="project-actions">
         <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -29,7 +29,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Core Game Systems</h3>
+          <ul>
+            <li>GameController managing session values, level progression, and state tracking</li>
+            <li>LevelControllerBase and NormalLevelController building and running puzzle levels</li>
+            <li>WordPickerSO data-driven word selection with difficulty and target logic</li>
+            <li>Progressive level generation with end-of-level reward and UI triggers</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Progression & Navigation</h3>
+          <ul>
+            <li>MapButton location selection with lock/unlock flow and persistent state</li>
+            <li>PlayLocation animated transition with delayed gameplay start</li>
+            <li>Location unlock progression with next-location logic</li>
+            <li>UINavigator managing room and game transitions seamlessly</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Economy & Market Systems</h3>
+          <ul>
+            <li>ShopDisplay singleton UI controller for market visibility</li>
+            <li>Currency management and AddButtonCurrency routing system</li>
+            <li>Chest system with slot management and full-slot feedback</li>
+            <li>ScriptableObject-driven economy balancing without hardcoding</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Tutorial & Onboarding</h3>
+          <ul>
+            <li>Tutorial and TutorialCockpitRoom with gating thresholds</li>
+            <li>Event-driven tutorial behavior with milestone progression</li>
+            <li>Guided hand-sequence interactions in cockpit tutorial</li>
+            <li>ClickableAreaHighlighter contextual UI with dynamic updates</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>NPC & Interaction</h3>
+          <ul>
+            <li>RandomWalkNPC with timed dialogue trigger behavior</li>
+            <li>Smooth NPC movement without boundary jitter</li>
+            <li>Event-driven NPC interaction system</li>
+            <li>Character animations and dialogue integration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Presentation & Polish</h3>
+          <ul>
+            <li>High-quality sprite package for enhanced visual fidelity</li>
+            <li>DOTween-powered animated transitions</li>
+            <li>Location label fade transitions for smooth UX</li>
+            <li>Animation controllers for room and UI presentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Word Game screenshots">
         <img src="../../assets/Screenshots/Word Game/1.jpeg" alt="Word Game screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Word Game/2.jpeg" alt="Word Game screenshot 2" loading="lazy" />
@@ -47,18 +104,22 @@
 
     <section class="project-section">
       <h2>Description</h2>
-      <p class="project-description">Word Game is a competitive gaming experience that challenges players to think quickly and strategically about word construction and placement. The game features real-time competition, word validation systems, and a clean, intuitive UI that makes gameplay accessible to all skill levels. Players can compete against AI or other players in various game modes.</p>
+      <p class="project-description">Zerzura Travel Word Game is a Unity-based location-themed word puzzle experience where players travel across destinations solving progressively difficult word levels. The game combines core word puzzle mechanics with meta progression through economy systems, room interactions, NPC dialogue, and collectible rewards. Players progress through location unlocks, manage resources via market and chest systems, and complete room activities while building character progression.</p>
     </section>
 
     <section class="project-section">
       <h2>What I Have Done</h2>
-      <ul class="project-details-list">
-        <li>Developed word validation and scoring systems using dictionary databases</li>
-        <li>Implemented game state management for single-player and multiplayer modes</li>
-        <li>Created polished UI systems using Unity UI and TextMeshPro</li>
-        <li>Built leaderboard and progression tracking systems</li>
-        <li>Designed responsive layouts for various screen sizes</li>
-        <li>Implemented turn-based and real-time game modes</li>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Architected modular game systems with GameController managing session values and progression state</li>
+        <li>Built level generation system using LevelControllerBase and WordPickerSO with data-driven difficulty scaling</li>
+        <li>Implemented location progression with MapButton lock/unlock flow and persistent state management</li>
+        <li>Designed animated location transitions in PlayLocation with delayed gameplay start for smooth UX</li>
+        <li>Created economy systems with ShopDisplay, currency management, and ScriptableObject-driven balancing</li>
+        <li>Developed tutorial system with gating thresholds, guided interactions, and milestone progression triggers</li>
+        <li>Built NPC interaction system with RandomWalkNPC timed dialogue and smooth movement behavior</li>
+        <li>Implemented chest system with slot management and full-slot feedback UI</li>
+        <li>Integrated high-quality sprite assets and DOTween animations for polished presentation</li>
+        <li>Managed 712 file changes across scripts, prefabs, scenes, and assets for comprehensive feature update</li>
       </ul>
     </section>
   </main>

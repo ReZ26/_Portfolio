@@ -20,9 +20,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unreal Engine Project</p>
+      <p class="project-label">Unreal Engine | RPG Systems Architecture</p>
       <h1 class="project-title">Prototype For RPG Game</h1>
-      <p class="project-about"><strong>Overview:</strong> A third-person action RPG/combat prototype in Unreal Engine, combining C++ core logic with a Blueprint-driven gameplay layer. It includes melee/ranged enemies, attack systems, damage handling, interactive traps, and AOE abilities, all built on a modular and extensible foundation.</p>
+      <p class="project-about"><strong>Overview:</strong> Modular RPG framework combining C++/Blueprint hybrid architecture with combat systems, enemy AI, damage handling, and interactive gameplay components.</p>
       <div class="project-actions">
         <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -30,7 +30,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Combat System</h3>
+          <ul>
+            <li>Animation-notify based hit detection and collision tracing</li>
+            <li>Data-driven attack framework with configurable attack properties</li>
+            <li>Combo system with attack chaining and state validation</li>
+            <li>Attack cooldown and resource management</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Damage & Health</h3>
+          <ul>
+            <li>Interface-based Damageable contract for consistent implementation</li>
+            <li>Damage type enums with type-specific response handling</li>
+            <li>Health tracking with stat-based scaling</li>
+            <li>Health bar UI widget integration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Enemy & AI</h3>
+          <ul>
+            <li>Base enemy class with shared behavior templates</li>
+            <li>Specialized enemy variants (melee, ranged, boss, mage)</li>
+            <li>AI decision-making and target evaluation</li>
+            <li>Animation and VFX per enemy type</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Systems Architecture</h3>
+          <ul>
+            <li>Component-based design for modular gameplay systems</li>
+            <li>Interface-driven contracts for loose coupling</li>
+            <li>Data-driven configuration using structs and enums</li>
+            <li>Reusable base Blueprints for rapid content iteration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Interactive Elements</h3>
+          <ul>
+            <li>Interactable object framework with interaction interface</li>
+            <li>AOE ability system for instant and over-time effects</li>
+            <li>Trap mechanics with activation and state management</li>
+            <li>Environmental feedback through VFX and audio</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Content Pipeline</h3>
+          <ul>
+            <li>Organized asset structure by system domain</li>
+            <li>Shared material and animation libraries</li>
+            <li>Scalable content organization for team expansion</li>
+            <li>Clear naming conventions for maintainability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Prototype For RPG Game screenshots">
         <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104430.png" alt="Prototype RPG screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104436.png" alt="Prototype RPG screenshot 2" loading="lazy" />

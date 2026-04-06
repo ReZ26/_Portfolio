@@ -20,9 +20,9 @@
 
   <main class="container project-view">
     <header class="project-hero">
-      <p class="project-label">Unreal Engine Project</p>
+      <p class="project-label">Unreal Engine | Action Combat Prototype</p>
       <h1 class="project-title">Reality Run</h1>
-      <p class="project-about"><strong>Overview:</strong> An Unreal Engine action-combat prototype in a sci-fi/fantasy world. It features a third-person gameplay loop with character combat, enemy AI, VFX-driven abilities, and exploration-focused level design. The project supports melee/ranged combat, multiple enemy archetypes, and various themed environments.</p>
+      <p class="project-about"><strong>Overview:</strong> Sci-fi action-combat prototype with third-person gameplay, character combat, enemy AI, abilities, and exploration-focused level design.</p>
       <div class="project-actions">
         <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
         <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
@@ -30,7 +30,64 @@
     </header>
 
     <section class="project-section">
-      <h2>Images</h2>
+      <h2>Technical Breakdown</h2>
+      <div class="technical-details">
+        <div class="technical-section">
+          <h3>Damage System</h3>
+          <ul>
+            <li>Modular damage framework with BPC_DamageSystem component</li>
+            <li>Damageable interface for consistent implementation</li>
+            <li>Damage type enums with response handling</li>
+            <li>Health bar UI widget integration</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Combat Architecture</h3>
+          <ul>
+            <li>Attack data component (BPC_Attacks) with S_AttackInfo struct</li>
+            <li>Melee and ranged combat support</li>
+            <li>Animation-based hit detection</li>
+            <li>Cooldown and resource management</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Enemy System</h3>
+          <ul>
+            <li>Enemy base Blueprint with shared behavior</li>
+            <li>Specialized variants (melee, ranged, werewolf/boss)</li>
+            <li>AI decision-making and target evaluation</li>
+            <li>Per-archetype animations and VFX</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Ability Framework</h3>
+          <ul>
+            <li>Area-of-effect (AOE) base Blueprint system</li>
+            <li>Instant and over-time effect variants</li>
+            <li>Effect types (blast, lightning, fire, etc.)</li>
+            <li>Configurable radius and duration parameters</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>Input & Controls</h3>
+          <ul>
+            <li>Enhanced Input System for modern input handling</li>
+            <li>Movement, aiming, sprint, crouch, jump actions</li>
+            <li>Interact and traversal key mappings</li>
+            <li>Controller and keyboard/mouse support</li>
+          </ul>
+        </div>
+        <div class="technical-section">
+          <h3>World & Content</h3>
+          <ul>
+            <li>Multiple themed environments (sci-fi, fantasy, planets)</li>
+            <li>Modular plugin architecture (DamageSystem, Interaction)</li>
+            <li>Reusable VFX/material libraries</li>
+            <li>Organized content pipeline by feature domain</li>
+          </ul>
+        </div>
+      </div>
+    </section>
       <div class="project-gallery" aria-label="Reality Run screenshots">
         <img src="../../assets/Screenshots/RealityRun/Engine Screenshot 2026.03.13 - 20.22.52.34.png" alt="Reality Run screenshot 1" loading="lazy" />
         <img src="../../assets/Screenshots/RealityRun/Engine Screenshot 2026.03.13 - 20.23.32.52.png" alt="Reality Run screenshot 2" loading="lazy" />

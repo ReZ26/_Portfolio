@@ -1,0 +1,317 @@
+﻿{
+  "projectDetails": {
+    "realm-rival": {
+      "title": "Realm Rival",
+      "hook": "Competitive multiplayer action game with responsive combat and objective-driven gameplay.",
+      "technicalOverview": "Built a fast-paced competitive framework with client-side prediction, server authority validation, and real-time player feedback systems.",
+      "keyFeatures": [
+        "Real-time competitive matchmaking with balanced team spawning",
+        "Responsive combat feedback with frame-perfect input handling",
+        "Dynamic objective progression system with event broadcasting",
+        "Player stat tracking and session persistence across matches"
+      ],
+      "technicalBreakdown": {
+        "architecture": "Server-authoritative multiplayer framework with client-side prediction",
+        "networking": "Replicated actors, RPCs for critical events, optimized tick rates",
+        "gameplay": "Input-to-action pipeline with latency compensation",
+        "systems": "Match state machine, team management, score tracking"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Maintaining responsiveness while ensuring server authority",
+        "solution1": "Implemented client-side prediction with server reconciliation for smooth 60fps play",
+        "challenge2": "Balancing players across teams in real-time",
+        "solution2": "Built dynamic team balancing algorithm that runs pre-match and during team switches"
+      },
+      "techStack": ["Unreal Engine 5", "C++", "Blueprints", "Replication Graph", "EOS Networking"]
+    },
+    "word-dash": {
+      "title": "Word Dash",
+      "hook": "Multiplayer word-puzzle game with session management and competitive scoring.",
+      "technicalOverview": "Designed and implemented a complete multiplayer game loop with word validation systems, session state management, and data-driven configuration.",
+      "keyFeatures": [
+        "Real-time word validation with dictionary integration",
+        "Session-based multiplayer with persistent leaderboards",
+        "Data-driven word list configuration and difficulty scaling",
+        "Player state synchronization across network sessions"
+      ],
+      "technicalBreakdown": {
+        "architecture": "Game Instance-based session manager with GameState for shared match data",
+        "gameplay": "Turn-based word mechanics with real-time validation",
+        "networking": "Actor replication for player scores and match progression",
+        "systems": "Leaderboard tracking, save-game serialization, UI state binding"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Synchronizing word validation across clients in real-time",
+        "solution1": "Centralized validation on server with client-side prediction for immediate feedback",
+        "challenge2": "Managing complex UI state across menu, lobby, and gameplay screens",
+        "solution2": "Built UI state machine with context switching for different game phases"
+      },
+      "techStack": ["Unreal Engine 5.5", "Blueprints", "UMG Widget System", "Save Game System", "Data Tables"]
+    },
+    "legend-of-indra": {
+      "title": "Legend of Indra vs Vritrasur",
+      "hook": "Full-scale action RPG with advanced combat, AI systems, and narrative-driven encounters.",
+      "technicalOverview": "Complete gameplay architecture for an action RPG including melee combat, advanced AI behavior trees, dynamic encounter design, and progression systems.",
+      "keyFeatures": [
+        "Combo-based combat system with hit detection and damage scaling",
+        "Behavior Tree AI with dynamic decision-making and adaptive difficulty",
+        "Quest system with objective tracking and narrative branching",
+        "Character progression with stats, equipment, and ability unlocks"
+      ],
+      "technicalBreakdown": {
+        "combatSystem": "Animation-notified hit detection, combo chaining, poise mechanics",
+        "aiSystems": "Behavior Trees with state transitions, perception systems, threat evaluation",
+        "questSystem": "State-based quest tracking, objective updates, conditional rewards",
+        "progression": "Inventory management, equipment stats, ability unlock system"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Creating responsive combat that feels impactful at 60fps",
+        "solution1": "Implemented lag-compensated hit detection with client-side movement prediction",
+        "challenge2": "AI that adapts without feeling cheap or predictable",
+        "solution2": "Built threat-based AI with dynamic behavior selection and difficulty scaling curves"
+      },
+      "techStack": ["Unreal Engine 5", "C++/Blueprints", "Behavior Trees", "Enhanced Input System", "Data-Driven Design"]
+    },
+    "rewind-system": {
+      "title": "Rewind Component System",
+      "hook": "Advanced time-manipulation mechanic with frame-perfect replay and visual feedback.",
+      "technicalOverview": "Built a complete time-rewind system capturing and replaying player state history with synchronized visuals and audio for seamless temporal gameplay.",
+      "keyFeatures": [
+        "Frame-accurate state recording and playback system",
+        "Ghost actor visualization with material effects",
+        "Synchronized audio and particle effects with rewind timeline",
+        "Input-based rewind triggering with smooth state transitions"
+      ],
+      "technicalBreakdown": {
+        "recordingSystem": "Frame-by-frame state capture (position, rotation, animation)",
+        "playbackEngine": "Timeline-based interpolation for smooth state restoration",
+        "visualEffects": "Ghost material with custom shader, trail particle systems",
+        "audioSystem": "Time-synced audio playback with pitch modulation"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Memory efficiency with large history buffers",
+        "solution1": "Implemented circular buffer with configurable frame limit and delta compression",
+        "challenge2": "Smooth playback while maintaining accurate state restoration",
+        "solution2": "Cubic interpolation between frames with per-component easing curves"
+      },
+      "techStack": ["Unreal Engine 5.4", "Blueprints", "Struct Arrays", "Niagara VFX", "Material System"]
+    },
+    "prototype-rpg": {
+      "title": "Prototype For RPG Game",
+      "hook": "Modular RPG framework with interaction, progression, and combat-ready architecture.",
+      "technicalOverview": "Foundational RPG systems including character progression, interactable objects, modular damage handling, and extensible gameplay components.",
+      "keyFeatures": [
+        "Component-based damage system supporting multiple damage types",
+        "Interactable interface for world objects and NPCs",
+        "Modular progression system with stat scaling and ability unlocks",
+        "Area-of-effect ability framework for instant and over-time effects"
+      ],
+      "technicalBreakdown": {
+        "damageSystem": "Interface-based damageable contract, damage type enums, effect application",
+        "interaction": "Overlap-based detection with interaction queue for consistent handling",
+        "progression": "Stat arrays with level-based scaling, ability component attachment",
+        "effects": "Instanced AOE actors with configurable radius and duration"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Maintaining clean separation between damage logic and gameplay",
+        "solution1": "Implemented interface-based damage contract allowing reuse across player/enemy/objects",
+        "challenge2": "Scaling complexity as new damage types and effects were added",
+        "solution2": "Data-driven effect system with scriptable effect types and modular applications"
+      },
+      "techStack": ["Unreal Engine 5", "C++/Blueprints", "Interfaces", "Components", "Data Tables"]
+    },
+    "isles-of-echoes": {
+      "title": "Isles Of Echoes On Cybertrom",
+      "hook": "Advanced character framework with weapon handling, layered animations, and combat-ready systems.",
+      "technicalOverview": "Built on ALS (Advanced Locomotion System) with extended weapon mechanics, interaction systems, and modular damage logic creating a responsive game-ready character framework.",
+      "keyFeatures": [
+        "ALS-based locomotion with smooth state transitions and layered animations",
+        "Rifle and pistol mechanics with weapon equip/unequip states",
+        "Aiming offset system for multiple stances and weapon types",
+        "Interface-based damage system with health tracking and feedback"
+      ],
+      "technicalBreakdown": {
+        "locomotion": "ALS foundation with movement states, transitions, and animation layers",
+        "weaponSystem": "Weapon equip/unequip, animation blueprint switching, aiming offsets",
+        "animation": "Dedicated ABPs per weapon type, hit reactions, combat animations",
+        "damage": "Interface-based damage contract, damage types, health bars"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Smooth animation transitions between weapon types",
+        "solution1": "Implemented dedicated animation blueprints per weapon with state-based blending",
+        "challenge2": "Maintaining responsive aiming while switching weapons",
+        "solution2": "Built aim offset system with per-weapon stance support"
+      },
+      "techStack": ["Unreal Engine 5", "ALS", "Blueprints", "Animation System", "Material System"]
+    },
+    "reality-run": {
+      "title": "Reality Run",
+      "hook": "Sci-fi action-combat prototype with dynamic encounters and exploration-focused design.",
+      "technicalOverview": "Comprehensive combat framework supporting melee/ranged gameplay, enemy archetypes, VFX-driven abilities, and multiple themed environments.",
+      "keyFeatures": [
+        "Modular damage system with multiple damage types",
+        "Enemy hierarchy with base, melee, ranged, and boss variants",
+        "AOE ability framework for instant and over-time effects",
+        "Dynamic world building with multiple themed environments"
+      ],
+      "technicalBreakdown": {
+        "damage": "Component-based damage framework, damageable interface, effect application",
+        "enemies": "Enemy blueprint hierarchy, specialized variants, AI decision-making",
+        "abilities": "AOE base system, configurable effects, radius and duration",
+        "world": "Multiple content packs, modular plugin architecture, VFX libraries"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Creating balanced combat across different enemy types",
+        "solution1": "Built data-driven enemy configuration with stat arrays and scaling curves",
+        "challenge2": "Managing complex interactions between effects and environment",
+        "solution2": "Implemented effect queue system with priority-based application"
+      },
+      "techStack": ["Unreal Engine 5", "Blueprints", "Enhanced Input", "Data Tables", "Niagara VFX"]
+    },
+    "lost-cure": {
+      "title": "Lost Cure",
+      "hook": "Narrative-driven action adventure with objective-based gameplay and tension-building systems.",
+      "technicalOverview": "Third-person action prototype with projectile-based combat, boss encounter design, complete UI flow, and environmental interaction.",
+      "keyFeatures": [
+        "Projectile-based attack system with elemental variants",
+        "Boss encounter state machine with phase transitions",
+        "Complete UI flow from main menu through end-game screens",
+        "Interactive environmental systems with teleportation mechanics"
+      ],
+      "technicalBreakdown": {
+        "combat": "Projectile variants, attack component architecture, damage scaling",
+        "bossDesign": "State machine with phase transitions, pattern-based behavior",
+        "ui": "Main menu, pause/settings, HUD, end-game screens",
+        "environment": "Interactive objects, teleportation, water systems, PCG"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Creating challenging boss encounters without frustration",
+        "solution1": "Implemented telegraphed attack patterns with adaptive difficulty",
+        "challenge2": "Managing complex UI flow across multiple screens",
+        "solution2": "Built state-based UI manager with scene transitions"
+      },
+      "techStack": ["Unreal Engine 5.4", "Blueprints", "UMG Widgets", "Water Plugin", "PCG System"]
+    },
+    "bubble-trap": {
+      "title": "Bubble Trap",
+      "hook": "2D action-platformer with bubble-based combat mechanic for enemy trapping and arena control.",
+      "technicalOverview": "Complete action-platformer built in Unity 6 with bubble trapping mechanics, dual enemy AI systems, reward progression, and multi-scene architecture.",
+      "keyFeatures": [
+        "Bubble-based combat: spawn, grow, merge, trap, and pop mechanics at cursor position",
+        "Dual enemy AI: melee chasers and ranged shooters with distinct combat patterns",
+        "Reward-driven progression with score thresholds triggering level completion",
+        "Boss encounter with health visualization and projectile interactions"
+      ],
+      "technicalBreakdown": {
+        "playerSystems": "Movement controller with animation states (idle/walk/jump/hurt/death), health tracking, event-driven callbacks",
+        "bubbleMechanic": "Click-to-spawn at cursor, growth merging, size-based enemy trapping, timeout destruction, pop effects",
+        "enemyAI": "Melee chase behavior, ranged projectile AI, spawner with timed waves, adaptive spawn intervals",
+        "progressionSystem": "Reward drops, point collection, score UI updates, level threshold triggers, win/lose conditions"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Creating engaging combat through bubble mechanics without traditional attacks",
+        "solution1": "Implemented cursor-based bubble spawning with growth merging, requiring strategic placement",
+        "challenge2": "Managing multiple simultaneous enemy types with different behaviors",
+        "solution2": "Built separate AI systems for melee/ranged with spawner wave management"
+      },
+      "techStack": ["Unity 6", "C#", "Universal Render Pipeline", "UGUI", "TextMeshPro", "DOTween"]
+    },
+    "paint-runner": {
+      "title": "It's Me Pico",
+      "hook": "Competitive territory-control mobile game with tile ownership, adaptive AI, quests, and monetization.",
+      "technicalOverview": "Manager-driven mobile architecture with event-based communication, NavMesh AI, quest systems, and cross-scene persistence.",
+      "keyFeatures": [
+        "Real-time tile ownership and scoring with event-driven updates",
+        "Adaptive AI opponent with difficulty scaling from player win streak",
+        "Daily/weekly quest systems with automatic UTC reset scheduling",
+        "Complete monetization: rewarded ads, currency economy, lives, shop"
+      ],
+      "technicalBreakdown": {
+        "gameplayCore": "Event-driven tile ownership updates, game state transitions, winner resolution, IPaintable interface",
+        "aiSystem": "NavMesh-based movement, sensing/target selection, high-value target prioritization, adaptive difficulty",
+        "progressionSystems": "Daily/weekly quests with reset timers, level progression, AI scaling, reward distribution",
+        "monetization": "Rewarded ads integration, currency economy, lives system, shop, progression incentives"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Managing real-time multiplayer-feel competition with single AI opponent",
+        "solution1": "Event-driven architecture decouples AI from tile updates, enabling responsive single-player experience",
+        "challenge2": "Balancing game difficulty while maintaining fairness and engagement",
+        "solution2": "Implemented adaptive difficulty scaling from player win streak and level progression"
+      },
+      "techStack": ["Unity 2023.x", "C#", "NavMesh", "ScriptableObjects", "PlayerPrefs", "JSON", "DOTween", "Google Mobile Ads/LevelPlay"]
+    },
+    "slimey-jump": {
+      "title": "Slimey Jump",
+      "hook": "2D vertical endless platformer with drag-jump mechanics, card-based progression, quests, shop, and idle economy.",
+      "technicalOverview": "Complete endless platformer in Unity 6 combining arcade action with deep progression systems, monetization, and hybrid idle mechanics.",
+      "keyFeatures": [
+        "Drag-and-release jump with trajectory preview in procedurally generated vertical levels",
+        "Dynamic camera pressure with off-screen grace timer and difficulty scaling",
+        "Card-based progression with rarity levels, upgrades, and permanent gameplay effects",
+        "Complete economy: coins, shop, quests, leaderboards, and rewarded ads"
+      ],
+      "technicalBreakdown": {
+        "coreGameplay": "Player controller with drag input, trajectory rendering, cling logic, health/revive system",
+        "difficultySystem": "Camera pressure, score-based milestone triggers, difficulty-weighted spawning, trap variants",
+        "proceduralGen": "Object pooling, weighted platform spawning (static/moving/trap/small), adaptive patterns",
+        "progressionSystems": "Cards with rarity/upgrades, daily/weekly quests with UTC resets, shop with purchases, leaderboards"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Balancing moment-to-moment action with meta progression retention",
+        "solution1": "Built separate gameplay/systems/UI layers with event-driven communication",
+        "challenge2": "Managing online leaderboard sync without breaking offline gameplay",
+        "solution2": "Implemented encrypted profile persistence with async leaderboard submission via UnityWebRequest"
+      },
+      "techStack": ["Unity 6", "C#", "Universal Render Pipeline", "Physics2D", "Tilemap", "Google Apps Script"]
+    },
+    "surprise-sprint": {
+      "title": "Surprise Sprint",
+      "hook": "Dynamic endless runner with procedurally generated platforms, power-up systems, and persistent progression.",
+      "technicalOverview": "Event-driven endless runner built in Unity 6 with procedural level generation, power-up mechanics, and comprehensive menu/settings systems.",
+      "keyFeatures": [
+        "Continuous forward movement with responsive jump and dash mechanics",
+        "Procedurally generated platforms with randomized X/Y gaps",
+        "Power-up system with buff/debuff/gravity variations",
+        "Complete menu and settings with audio/graphics controls"
+      ],
+      "technicalBreakdown": {
+        "gameplay": "Forward movement, jump mechanics, dash cooldown, collision detection",
+        "eventBus": "Central Actions.cs with static event channels for decoupled communication",
+        "generation": "GroundSpawner, ObjectPooler, GroundDestroyer for performance",
+        "ui": "Main menu, pause menu, settings persistence via PlayerPrefs"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Maintaining performance with infinite procedural generation",
+        "solution1": "Implemented object pooling and cleanup system for recycled segments",
+        "challenge2": "Decoupling gameplay systems for maintainable architecture",
+        "solution2": "Built event bus using static Actions delegates for loose coupling"
+      },
+      "techStack": ["Unity 6", "C#", "MonoBehaviour", "AudioMixer", "PostProcessing"]
+    },
+    "word-game": {
+      "title": "Word Game",
+      "hook": "Location-themed word puzzle with meta progression, economy systems, and travel-based narrative.",
+      "technicalOverview": "Modular Unity architecture combining word puzzle mechanics with location progression, NPC interactions, and economy-driven meta loops.",
+      "keyFeatures": [
+        "Location-based progression with MapButton lock/unlock flow and persistent state",
+        "Word puzzle generation via WordPickerSO with data-driven difficulty scaling",
+        "Economy system with ShopDisplay, currency management, and chest mechanics",
+        "NPC dialogue and interaction system with timed behaviors"
+      ],
+      "technicalBreakdown": {
+        "coreGameplay": "GameController session management, LevelControllerBase puzzle generation, progressive difficulty",
+        "progression": "Location unlock system, MapButton state persistence, PlayLocation transitions",
+        "economy": "ShopDisplay currency management, chest system with slot management, ScriptableObject balancing",
+        "interaction": "RandomWalkNPC dialogue triggers, event-driven NPC system, TimeManager inactive cues"
+      },
+      "challengesAndSolutions": {
+        "challenge1": "Balancing word puzzle difficulty with player progression",
+        "solution1": "Implemented WordPickerSO with data-driven target logic for adaptive difficulty curves",
+        "challenge2": "Managing complex location state and transitions",
+        "solution2": "Built MapButton lock/unlock flow with persistent state and smooth PlayLocation animations"
+      },
+      "techStack": ["Unity", "C#", "ScriptableObjects", "DOTween", "TextMeshPro", "UIToolkit"]
+    },
+  }
+}
+
