@@ -114,7 +114,48 @@
       "image": "assets/Screenshots/The Lost Cure/Lost_Cure1.jpg",
       "demo": "projects/lost-cure/",
       "source": "",
-      "engine": "Unreal"
+      "engine": "Unreal",
+      "video": "https://youtu.be/pio_Z0jXJao"
+    },
+    {
+      "title": "Paint Runner",
+      "description": "Unity 2D action game with dynamic painting mechanics, vibrant visual feedback, and engaging progression system.",
+      "image": "assets/Screenshots/Paint Runner/Screenshot_20260405_161250_It's Me Pico.jpg.jpeg",
+      "demo": "projects/paint-runner/",
+      "source": "",
+      "engine": "Unity"
+    },
+    {
+      "title": "Slimey Jump",
+      "description": "Unity platformer featuring smooth jump mechanics, slime-based physics interactions, and challenging level design.",
+      "image": "assets/placeholder.png",
+      "demo": "projects/slimey-jump/",
+      "source": "",
+      "engine": "Unity"
+    },
+    {
+      "title": "Bubble Trap",
+      "description": "Puzzle-action Unity game with bubble mechanics, strategic gameplay elements, and satisfying visual effects.",
+      "image": "assets/placeholder.png",
+      "demo": "projects/bubble-trap/",
+      "source": "",
+      "engine": "Unity"
+    },
+    {
+      "title": "Word Game",
+      "description": "Unity word-based gameplay experience combining puzzle mechanics with engaging UI/UX for competitive word-based challenges.",
+      "image": "assets/placeholder.png",
+      "demo": "projects/word-game/",
+      "source": "",
+      "engine": "Unity"
+    },
+    {
+      "title": "Surprise Sprint",
+      "description": "Dynamic Unity runner game with unpredictable obstacles, power-up systems, and responsive character controls.",
+      "image": "assets/placeholder.png",
+      "demo": "projects/surprise-sprint/",
+      "source": "",
+      "engine": "Unity"
     }
   ],
   "education": "Bachelor of Engineering - Computer Science (Graphics And Gaming), Chandigarh University, Mohali, Punjab, IN (2022-2026) — CGPA: 8.41"

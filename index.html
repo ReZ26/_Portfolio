@@ -1,4 +1,4 @@
-﻿<!doctype html>
+﻿﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Roboto:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260406b" />
+  <link rel="stylesheet" href="css/theme.css?v=20260406b" />
   <link rel="icon" href="assets/icons/unreal.png" type="image/png">
 </head>
 <body>
-  <div id="loading-sequence" class="loading-sequence" aria-live="polite">Remove
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <div id="loading-sequence" class="loading-sequence" aria-live="polite">
     <div class="loading-panel">
       <p class="loading-title">Booting Portfolio World</p>
       <p class="loading-subtitle">Initializing missions, zones, and systems...</p>
@@ -19,14 +22,6 @@
     </div>
   </div>
 
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-  <a class="engine-corner engine-left" href="#unity-projects" aria-label="Jump to Unity zone">
-    <img src="assets/icons/unity.png" alt="Unity" />
-  </a>
-  <a class="engine-corner engine-right" href="#unreal-projects" aria-label="Jump to Unreal zone">
-    <img src="assets/icons/unreal.png" alt="Unreal Engine" />
-  </a>
 
   <aside class="progress-hud" id="progress-hud" aria-hidden="true">
     <p class="hud-label">Mission Progress</p>

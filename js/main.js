@@ -1,4 +1,4 @@
-﻿// ===== Typing Effect =====
+﻿﻿// ===== Typing Effect =====
 const typedTextEl = document.querySelector('.typed-text');
 const phrases = ['gameplay systems.', 'combat mechanics.', 'multiplayer experiences.', 'immersive worlds.'];
 let phraseIndex = 0;
@@ -431,15 +431,19 @@ function setFooterYear() {
 
 function initHeaderScroll() {
   const header = document.querySelector('.site-header');
-  if (!header) return;
+  const projectTopbar = document.querySelector('.project-topbar');
+  
+  if (!header && !projectTopbar) return;
 
   window.addEventListener(
     'scroll',
     () => {
       if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+        if (header) header.classList.add('scrolled');
+        if (projectTopbar) projectTopbar.classList.add('scrolled');
       } else {
-        header.classList.remove('scrolled');
+        if (header) header.classList.remove('scrolled');
+        if (projectTopbar) projectTopbar.classList.remove('scrolled');
       }
     },
     { passive: true }
