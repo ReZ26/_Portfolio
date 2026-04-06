@@ -168,6 +168,7 @@ function renderProjects(containerId, projects, fallbackEngine) {
       const imageSrc = p.image || 'assets/images/placeholder.png';
       const hasDemo = typeof p.demo === 'string' && p.demo.trim() !== '';
       const hasSource = typeof p.source === 'string' && p.source.trim() !== '';
+      const hasDownload = typeof p.download === 'string' && p.download.trim() !== '';
       const cardHref = hasDemo ? escapeHtml(p.demo) : '';
 
       return `
@@ -182,6 +183,7 @@ function renderProjects(containerId, projects, fallbackEngine) {
           <div class="project-links">
             ${hasDemo ? `<a href="${cardHref}" target="_blank" rel="noopener">Open</a>` : ''}
             ${hasSource ? `<a href="${escapeHtml(p.source)}" target="_blank" rel="noopener">Code</a>` : ''}
+            ${hasDownload ? `<a href="${escapeHtml(p.download)}" target="_blank" rel="noopener">Download</a>` : ''}
           </div>
         </article>
       `;
@@ -495,6 +497,94 @@ function initScrollSpy() {
   );
 }
 
+// ===== Hero Image Switcher =====
+function initHeroImageSwitcher() {
+  const introArt = document.querySelector('.intro-art');
+  if (!introArt) return;
+
+  // Array of project screenshot paths
+  const projectImages = [
+    'assets/Screenshots/Realm Rivals/Screenshot 2026-04-05 165615.png',
+    'assets/Screenshots/Legend of Indra vs Vritrasur/Indra1.png',
+    'assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191107.png',
+    'assets/Screenshots/RealityRun/Engine Screenshot 2026.03.13 - 20.22.52.34.png',
+    'assets/Screenshots/Rewind System/Screenshot 2026-04-06 102954.png',
+    'assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104430.png',
+    'assets/Screenshots/The Lost Cure/Lost_Cure1.jpg',
+    'assets/Screenshots/Word Dash/Screenshot 2026-04-05 215451.png',
+    'assets/Screenshots/Paint Runner/Screenshot_20260405_161250_It\'s Me Pico.jpg.jpeg',
+    'assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191118.png',
+    'assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191129.png',
+    'assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191235.png',
+    'assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033347.png',
+    'assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033449.png',
+    'assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033509.png',
+    'assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033524.png',
+    'assets/Screenshots/Legend of Indra vs Vritrasur/Indra2.png',
+    'assets/Screenshots/Legend of Indra vs Vritrasur/Indra3.png',
+    'assets/Screenshots/Legend of Indra vs Vritrasur/Indra4.png',
+    'assets/Screenshots/Legend of Indra vs Vritrasur/Indra5.png',
+    'assets/Screenshots/Paint Runner/Screenshot_20260405_161309_It\'s Me Pico.jpg.jpeg',
+    'assets/Screenshots/Paint Runner/Screenshot_20260405_161345_It\'s Me Pico.jpg.jpeg',
+    'assets/Screenshots/Paint Runner/Screenshot_20260405_161436_It\'s Me Pico.jpg.jpeg',
+    'assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211023.png',
+    'assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211038.png',
+    'assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211051.png',
+    'assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211118.png',
+    'assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204535.png',
+    'assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204651.png',
+    'assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204818.png',
+    'assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204825.png',
+  ];
+
+  let currentImageIndex = -1;
+  let switchInterval;
+
+  function getRandomImage() {
+    const randomIndex = Math.floor(Math.random() * projectImages.length);
+    // Avoid showing the same image consecutively
+    while (randomIndex === currentImageIndex && projectImages.length > 1) {
+      return getRandomImage();
+    }
+    currentImageIndex = randomIndex;
+    return projectImages[randomIndex];
+  }
+
+  function switchImage() {
+    // Switch to random project image with fade effect
+    introArt.style.opacity = '0.7';
+    introArt.style.transition = 'all 0.6s ease-in-out';
+    const randomImage = getRandomImage();
+    introArt.src = randomImage;
+    setTimeout(() => {
+      introArt.style.opacity = '1';
+    }, 100);
+  }
+
+  // Start with a random project image after 2 second delay
+  setTimeout(() => {
+    switchImage();
+    switchInterval = setInterval(switchImage, 4000);
+  }, 2000);
+
+  // Clear interval when user leaves the page
+  window.addEventListener('beforeunload', () => {
+    clearInterval(switchInterval);
+  });
+
+  // Pause on mouse hover, resume on mouse leave
+  const heroSection = document.querySelector('.hero-visual');
+  if (heroSection) {
+    heroSection.addEventListener('mouseenter', () => {
+      clearInterval(switchInterval);
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      switchInterval = setInterval(switchImage, 4000);
+    });
+  }
+}
+
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
   initLoadingSequence();
@@ -508,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initZoneHUD();
   initParallax();
   initMissionCounters();
+  initHeroImageSwitcher();
 });
 
 // Clear any stale overlay when page is restored from cache/history.
