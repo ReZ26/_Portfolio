@@ -176,7 +176,7 @@ function renderProjects(containerId, projects, fallbackEngine) {
           <img class="project-thumb" src="${escapeHtml(imageSrc)}" alt="${escapeHtml(p.title || 'Project preview')}" loading="lazy" />
           <div class="project-meta">
             <span class="engine-badge"><img src="${engineIcon}" alt="" /> ${escapeHtml(engine || 'Game Dev')}</span>
-            <span class="mission-badge">Mission ${String(index + 1).padStart(2, '0')}</span>
+            ${p.tech ? `<span class="tech-badge">${escapeHtml(p.tech)}</span>` : ''}
           </div>
           <h4>${escapeHtml(p.title || 'Untitled')}</h4>
           <p>${escapeHtml(p.description || '')}</p>

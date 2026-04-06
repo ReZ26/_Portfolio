@@ -51,115 +51,131 @@
   "projects": [
     {
       "title": "Realm Rival",
-      "description": "Unreal Engine gameplay project focused on competitive mechanics, responsive combat flow, and moment-to-moment action polish.",
+      "description": "Server-authoritative multiplayer with client-side prediction. Real-time team balancing, replication-driven state management, and frame-perfect combat synchronization across networked players.",
       "image": "assets/Screenshots/Realm Rivals/Screenshot 2026-04-05 165615.png",
       "demo": "projects/realm-rival/",
       "source": "",
       "engine": "Unreal",
-      "video": "https://youtu.be/PvAs_mlONsE"
+      "video": "https://youtu.be/PvAs_mlONsE",
+      "tech": "UE5 C++/BP | Netcode"
     },
     {
       "title": "Word Dash",
-      "description": "Unreal Engine 5.5 multiplayer word game built primarily in Blueprints, featuring session-based gameplay, data-driven word systems, and a full menu-to-match flow.",
+      "description": "Session-based multiplayer architecture with GameInstance/GameMode/PlayerState hierarchy. Data-driven word validation, turn-based game state machine, and real-time score replication across clients.",
       "image": "assets/Screenshots/Word Dash/Screenshot 2026-04-05 215451.png",
       "demo": "projects/word-dash/",
       "source": "",
       "engine": "Unreal",
       "video": "https://youtu.be/fep_nQACTks",
-      "download": "https://drive.google.com/file/d/1NtKFE3bWKfmUJqSPo0bPUXLseTDry5Ni/view?usp=sharing"
+      "download": "https://drive.google.com/file/d/1NtKFE3bWKfmUJqSPo0bPUXLseTDry5Ni/view?usp=sharing",
+      "tech": "UE5 Blueprints | Multiplayer"
     },
     {
       "title": "Legend of Indra vs Vritrasur",
-      "description": "A long-form action-adventure RPG built in Unreal Engine 5, inspired by the ancient Hindu epic. I served as both Game Designer and Developer on this project, responsible for the combat system, enemy AI, narrative flow, and environment design.",
+      "description": "Combat system architecture with responsive hit detection, enemy behavior trees, and narrative-driven state progression. Quest system integration with player choice pathways and dynamic objective flow.",
       "image": "assets/Screenshots/Legend of Indra vs Vritrasur/Indra1.png",
       "demo": "projects/indra-vs-virtasure/",
       "source": "",
-      "engine": "Unreal"
+      "engine": "Unreal",
+      "tech": "UE5 C++/BP | Combat | Behavior Trees"
     },
     {
       "title": "Isles Of Echoes On Cybertrom",
-      "description": "Sci-fi Unreal project emphasizing mission scripting, traversal mechanics, and immersive world interaction.",
+      "description": "Mission scripting framework with branching quest logic, traversal state management, and environmental interaction systems. Dynamic objective flow with player agency and consequence tracking.",
       "image": "assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191107.png",
       "demo": "projects/quest-of-cybertron/",
       "source": "",
-      "engine": "Unreal"
+      "engine": "Unreal",
+      "tech": "UE5 | Quest Systems | State Management"
     },
     {
       "title": "Reality Run",
-      "description": "Unreal runner-style prototype with dynamic obstacles, smooth movement handling, and gameplay pacing systems.",
+      "description": "Procedural obstacle generation with difficulty scaling tied to score milestones. Dynamic camera pressure mechanics, collision-based state transitions, and performance-optimized pooling systems.",
       "image": "assets/Screenshots/RealityRun/Engine Screenshot 2026.03.13 - 20.22.52.34.png",
       "demo": "projects/reality-run/",
       "source": "",
       "engine": "Unreal",
-      "video": "https://youtu.be/uYjTa0nZxZw"
+      "video": "https://youtu.be/uYjTa0nZxZw",
+      "tech": "UE5 C++/BP | Procedural Generation"
     },
     {
       "title": "Rewind Component System",
-      "description": "Blueprint-based Unreal Engine 5.4 third-person prototype focused on a time-rewind gameplay mechanic with integrated movement, combat, UI hints, and visual-audio feedback.",
+      "description": "State capture/replay architecture with temporal logic. Input-to-action pipeline with rewind state restoration, particle synchronization, and audio feedback systems. Demonstrates clean component-based design.",
       "image": "assets/Screenshots/Rewind System/Screenshot 2026-04-06 102954.png",
       "demo": "projects/rewind/",
       "source": "",
-      "engine": "Unreal"
+      "engine": "Unreal",
+      "video": "https://youtu.be/pVjgrQKkfMY",
+      "tech": "UE5 Blueprints | State Management"
     },
     {
-      "title": "Prototype For RPG Game",
-      "description": "Unreal RPG prototype exploring character progression, interaction architecture, and modular gameplay components.",
+      "title": "RPG Systems Architecture",
+      "description": "Modular combat framework with reusable attack components, damage system architecture, and enemy AI hierarchy. Character progression integration with equipment systems and stat scaling.",
       "image": "assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104430.png",
       "demo": "projects/prototype-for-rpg-game/",
       "source": "",
-      "engine": "Unreal"
+      "engine": "Unreal",
+      "tech": "UE5 C++/BP | Systems Design"
     },
     {
       "title": "Lost Cure",
-      "description": "Narrative-focused Unreal project featuring objective-driven gameplay, environmental storytelling, and tension-building systems.",
+      "description": "Objective-driven game state machine with cinematic integration. Tension-building mechanics through dynamic pacing, environmental narrative progression, and player consequence tracking systems.",
       "image": "assets/Screenshots/The Lost Cure/Lost_Cure1.jpg",
       "demo": "projects/lost-cure/",
       "source": "",
       "engine": "Unreal",
       "video": "https://youtu.be/pio_Z0jXJao",
-      "download": "https://drive.google.com/file/d/1XuO6Yjj8IeXFzfi7K7IWf9BLmHmuNFM4/view?usp=sharing"
+      "download": "https://drive.google.com/file/d/1XuO6Yjj8IeXFzfi7K7IWf9BLmHmuNFM4/view?usp=sharing",
+      "tech": "UE5 | Narrative Systems"
     },
     {
       "title": "It's Me Pico",
-      "description": "Unity 2023 competitive territory-control mobile game with tile ownership mechanics, adaptive AI, quest systems, daily rewards, and complete monetization integration for shipped mobile gameplay.",
+      "description": "Competitive gameplay loop with real-time tile ownership tracking and NavMesh-based AI difficulty scaling. Economy system with persistent progression, quest data structures, and monetization integration.",
       "image": "assets/Screenshots/Paint Runner/Screenshot_20260405_161250_It's Me Pico.jpg.jpeg",
       "demo": "projects/paint-runner/",
       "source": "",
-      "engine": "Unity"
+      "engine": "Unity",
+      "tech": "Unity 2023 C# | AI | Economy Systems"
     },
     {
       "title": "Slimey Jump",
-      "description": "Unity 6 vertical endless platformer with drag-jump mechanics, procedural generation, card-based progression, quest system, shop economy, live leaderboards, and hybrid idle mode with offline progression.",
+      "description": "Vertical endless platformer with drag-based trajectory prediction. Procedural platform generation with weighted spawn rules, card-based progression system, and hybrid active/idle mode with offline rewards calculation.",
       "image": "assets/Screenshots/Slimey Jump/Screenshot 2026-04-06 211023.png",
       "demo": "projects/slimey-jump/",
       "source": "",
       "engine": "Unity",
-      "video": "https://shubham-bajaj.itch.io/slime-game"
+      "video": "https://shubham-bajaj.itch.io/slime-game",
+      "tech": "Unity 6 C# | Procedural Generation | Progression"
     },
     {
       "title": "Bubble Trap",
-      "description": "Unity 6 2D action-platformer with bubble-based combat mechanics, enemy AI systems, reward-driven progression, and multi-level gameplay across three playable levels.",
+      "description": "Arena-based action with bubble lifecycle management and physics-driven interaction system. Enemy AI with chase and attack patterns, reward drop architecture, and multi-level progression tracking.",
       "image": "assets/Screenshots/Bubble Trap/Screenshot 2025-01-25 033347.png",
       "demo": "projects/bubble-trap/",
       "source": "",
-      "engine": "Unity"
+      "engine": "Unity",
+      "download": "https://drive.google.com/file/d/1cNzXhPa7kWTm0vW5IG1_v5xBtCUH_5g4/view?usp=sharing",
+      "tech": "Unity 6 C# | Physics | AI"
     },
     {
       "title": "Word Game",
-      "description": "Location-themed word puzzle game combining core word mechanics with meta progression, economy systems, room interactions, NPC dialogue, and collectible rewards in a travel-based experience.",
+      "description": "Location-based progression with meta economy systems. Word validation logic, room state machines, NPC dialogue routing, and collectible reward structures integrated with persistent player profile data.",
       "image": "assets/Screenshots/Word Game/1.jpeg",
       "demo": "projects/word-game/",
       "source": "",
-      "engine": "Unity"
+      "engine": "Unity",
+      "tech": "Unity C# | Data Structures | State Management"
     },
     {
       "title": "Surprise Sprint",
-      "description": "Dynamic Unity 6 endless runner with procedurally generated platforms, power-up systems, event-driven architecture, and persistent progression via PlayerPrefs.",
+      "description": "Procedurally-generated infinite runner with event-driven architecture. Power-up system with timed effect lifecycle, score multiplier logic, and PlayerPrefs-based persistence for cross-session progression.",
       "image": "assets/Screenshots/Surprise Sprint/Screenshot 2025-01-22 204535.png",
       "demo": "projects/surprise-sprint/",
       "source": "",
       "engine": "Unity",
-      "video": "https://youtu.be/Xo9sye7HXSI"
+      "video": "https://youtu.be/Xo9sye7HXSI",
+      "download": "https://shubham-bajaj.itch.io/surprise-sprint",
+      "tech": "Unity 6 C# | Event Systems"
     }
   ],
   "education": "Bachelor of Engineering - Computer Science (Graphics And Gaming), Chandigarh University, Mohali, Punjab, IN (2022-2026) — CGPA: 8.41"
