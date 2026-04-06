@@ -1,0 +1,121 @@
+﻿{
+  "raw_pdf_path": "ATS CV.pdf",
+  "contact": "Shubham Bajaj\nBihar, India\n+91-8789896883\nshubhambajaj3526@gmail.com\nlinkedin.com/in/shubham--bajaj",
+  "summary": "Game Developer with 3 years of experience in Unreal Engine and Unity, building rewind systems, multiplayer gameplay, and polished player experiences.",
+  "skills": [
+    "Unreal Engine 5 (C++, Blueprints)",
+    "Unity (C#)",
+    "C++",
+    "C#",
+    "Git",
+    "SQL",
+    "UI/UX (Figma, Affinity)",
+    "Blender (Beginner)"
+  ],
+  "experience": [
+    {
+      "title": "Game Developer (Unreal Engine)",
+      "company": "Alone Clone",
+      "location": "Remote",
+      "dates": "Oct 2025 – Dec 2025",
+      "details": [
+        "Designed, developed, and maintained gameplay systems using Unreal Engine 5 leveraging C++ and Blueprints for scalable and maintainable code.",
+        "Developed multiplayer networking features including server–client architecture, actor replication, RPCs, and session management.",
+        "Created AI systems for enemies and NPCs using Behavior Trees, State Machines, and custom Unreal AI logic.",
+        "Built reusable tools and gameplay components to improve iteration speed and support designer-driven workflows."
+      ]
+    },
+    {
+      "title": "Game Developer (Unity Engine)",
+      "company": "Zerzura Studio",
+      "location": "Remote",
+      "dates": "Sept 2024 – April 2025",
+      "details": [
+        "Developed and maintained gameplay systems in Unity (C#) for a 2D slime platformer and a word game, implementing core mechanics, progression, and game states.",
+        "Built UI and interaction systems using Unity UI and TextMeshPro including scoring, feedback, and player progression features.",
+        "Optimized and refactored gameplay code for performance, stability, and maintainability, collaborating remotely with designers and artists via version control."
+      ]
+    },
+    {
+      "title": "Extern (Mobalytics)",
+      "company": "Mobalytics",
+      "location": "Remote",
+      "dates": "April 2024 – May 2024",
+      "details": [
+        "Completed a remote externship gaining hands-on exposure to game analytics, market research, and player behavior analysis.",
+        "Conducted an in-depth genre-focused analysis evaluating core game mechanics, KPIs, monetization models, and player psychology.",
+        "Synthesized research findings into a structured presentation with actionable recommendations on market expansion and design opportunities."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Realm Rival",
+      "description": "Unreal Engine gameplay project focused on competitive mechanics, responsive combat flow, and moment-to-moment action polish.",
+      "image": "assets/Screenshots/Realm Rivals/Screenshot 2026-04-05 165615.png",
+      "demo": "projects/realm-rival/",
+      "source": "",
+      "engine": "Unreal",
+      "video": "https://youtu.be/PvAs_mlONsE"
+    },
+    {
+      "title": "Word Dash",
+      "description": "Unreal Engine 5.5 multiplayer word game built primarily in Blueprints, featuring session-based gameplay, data-driven word systems, and a full menu-to-match flow.",
+      "image": "assets/Screenshots/Word Dash/Screenshot 2026-04-05 215451.png",
+      "demo": "projects/word-dash/",
+      "source": "",
+      "engine": "Unreal",
+      "video": "https://youtu.be/fep_nQACTks"
+    },
+    {
+      "title": "Legend of Indra vs Vritrasur",
+      "description": "A long-form action-adventure RPG built in Unreal Engine 5, inspired by the ancient Hindu epic. I served as both Game Designer and Developer on this project, responsible for the combat system, enemy AI, narrative flow, and environment design.",
+      "image": "assets/Screenshots/Legend of Indra vs Vritrasur/Indra1.png",
+      "demo": "projects/indra-vs-virtasure/",
+      "source": "",
+      "engine": "Unreal"
+    },
+    {
+      "title": "Isles Of Echoes On Cybertrom",
+      "description": "Sci-fi Unreal project emphasizing mission scripting, traversal mechanics, and immersive world interaction.",
+      "image": "assets/Screenshots/Isles Of Echoes On Cybertrom/Screenshot 2026-04-05 191107.png",
+      "demo": "projects/quest-of-cybertron/",
+      "source": "",
+      "engine": "Unreal"
+    },
+    {
+      "title": "Reality Run",
+      "description": "Unreal runner-style prototype with dynamic obstacles, smooth movement handling, and gameplay pacing systems.",
+      "image": "assets/Screenshots/RealityRun/Engine Screenshot 2026.03.13 - 20.22.52.34.png",
+      "demo": "projects/reality-run/",
+      "source": "",
+      "engine": "Unreal",
+      "video": "https://youtu.be/uYjTa0nZxZw"
+    },
+    {
+      "title": "Rewind Component System",
+      "description": "Blueprint-based Unreal Engine 5.4 third-person prototype focused on a time-rewind gameplay mechanic with integrated movement, combat, UI hints, and visual-audio feedback.",
+      "image": "assets/Screenshots/Rewind System/Screenshot 2026-04-06 102954.png",
+      "demo": "projects/rewind/",
+      "source": "",
+      "engine": "Unreal"
+    },
+    {
+      "title": "Prototype For RPG Game",
+      "description": "Unreal RPG prototype exploring character progression, interaction architecture, and modular gameplay components.",
+      "image": "assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104430.png",
+      "demo": "projects/prototype-for-rpg-game/",
+      "source": "",
+      "engine": "Unreal"
+    },
+    {
+      "title": "Lost Cure",
+      "description": "Narrative-focused Unreal project featuring objective-driven gameplay, environmental storytelling, and tension-building systems.",
+      "image": "assets/Screenshots/The Lost Cure/Lost_Cure1.jpg",
+      "demo": "projects/lost-cure/",
+      "source": "",
+      "engine": "Unreal"
+    }
+  ],
+  "education": "Bachelor of Engineering - Computer Science (Graphics And Gaming), Chandigarh University, Mohali, Punjab, IN (2022-2026) — CGPA: 8.41"
+}

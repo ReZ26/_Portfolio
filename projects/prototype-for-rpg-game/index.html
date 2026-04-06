@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prototype For RPG Game - Project Details</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="icon" href="../../assets/icons/unreal.png" type="image/png">
+</head>
+<body>
+  <div class="project-topbar">
+    <a class="back-link" href="../../index.html">← Back to portfolio</a>
+    <div class="project-nav-group">
+      <a class="btn outline" href="../rewind/">&larr; Previous Project</a>
+      <a class="btn outline" href="../lost-cure/">Next Project &rarr;</a>
+    </div>
+  </div>
+
+
+  <main class="container project-view">
+    <header class="project-hero">
+      <p class="project-label">Unreal Engine Project</p>
+      <h1 class="project-title">Prototype For RPG Game</h1>
+      <p class="project-about"><strong>Overview:</strong> A third-person action RPG/combat prototype in Unreal Engine, combining C++ core logic with a Blueprint-driven gameplay layer. It includes melee/ranged enemies, attack systems, damage handling, interactive traps, and AOE abilities, all built on a modular and extensible foundation.</p>
+      <div class="project-actions">
+        <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
+        <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2>Images</h2>
+      <div class="project-gallery" aria-label="Prototype For RPG Game screenshots">
+        <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104430.png" alt="Prototype RPG screenshot 1" loading="lazy" />
+        <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104436.png" alt="Prototype RPG screenshot 2" loading="lazy" />
+        <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104452.png" alt="Prototype RPG screenshot 3" loading="lazy" />
+        <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104518.png" alt="Prototype RPG screenshot 4" loading="lazy" />
+        <img src="../../assets/Screenshots/Prototype For RPG Game/Screenshot 2026-04-06 104524.png" alt="Prototype RPG screenshot 5" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Gameplay Video</h2>
+      <div class="project-video-inline" aria-label="Prototype For RPG Game gameplay video player">
+        <div class="project-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/_Pzsp0p9Uyc"
+            title="Prototype For RPG Game Gameplay"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <p class="project-video-caption">Watch Prototype For RPG Game gameplay preview directly in the player above.</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Description</h2>
+      <p class="project-about">A third-person action RPG/combat prototype built in Unreal Engine. The project combines C++ core character logic with a large Blueprint-driven gameplay layer that includes melee and ranged enemies, attack systems, damage handling, interactive traps/objects, UI widgets, and area-of-effect abilities.</p>
+      <p class="project-about">The game foundation follows a modular structure so gameplay features can be expanded quickly through components, interfaces, enums, structs, and reusable base Blueprints.</p>
+    </section>
+
+    <section class="project-section">
+      <h2>What I have done in this project</h2>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li><strong>Core Player Controller:</strong> Set up a third-person character with spring arm camera, enhanced input, and combat state checks.</li>
+        <li><strong>Combat & Attack Framework:</strong> Built an attack architecture with data-driven attack info and animation-notify based collision tracing.</li>
+        <li><strong>Damage System:</strong> Implemented a modular damage system with a `Damageable` interface, damage types, and health bar support for reuse across actors.</li>
+        <li><strong>Enemy & AI Content:</strong> Created a base enemy class and specialized variants (boss, mage, melee, ranged) with unique animations and VFX.</li>
+        <li><strong>Area-of-Effect (AOE) System:</strong> Added a reusable AOE Blueprint base for instant and over-time effects like explosions, fire, and healing.</li>
+        <li><strong>Interactable & Trap Systems:</strong> Implemented a base framework for interactable objects and traps using an interaction interface.</li>
+        <li><strong>Modular Design:</strong> Used component-based design and interfaces to keep systems decoupled and extensible.</li>
+        <li><strong>UI & Feedback:</strong> Added gameplay widgets for health bars and enemy UI, plus trail and damage visual effects.</li>
+        <li><strong>Content Organization:</strong> Structured all assets by system (Animation, Enemy, DamageSystem, etc.) to maintain a clean and scalable project.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../../js/project-gallery-lightbox.js"></script>
+</body>
+</html>

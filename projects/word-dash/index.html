@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Word Dash - Project Details</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="icon" href="../../assets/icons/unreal.png" type="image/png">
+</head>
+<body>
+  <div class="project-topbar">
+    <a class="back-link" href="../../index.html">&larr; Back to portfolio</a>
+    <div class="project-nav-group">
+      <a class="btn outline" href="../realm-rival/">&larr; Previous Project</a>
+      <a class="btn outline" href="../indra-vs-virtasure/">Next Project &rarr;</a>
+    </div>
+  </div>
+
+  <main class="container project-view">
+    <header class="project-hero">
+      <p class="project-label">Unreal Engine Project</p>
+      <h1 class="project-title">Word Dash</h1>
+      <p class="project-about"><strong>Overview:</strong> An Unreal Engine 5.5 multiplayer word game built mostly in Blueprints. It combines character-based gameplay with a custom word-game loop, session flow, and competitive player interaction, all managed through a full UI flow from main menu to end-game screens.</p>
+      <div class="project-actions">
+        <a class="btn primary disabled" href="#" aria-disabled="true">Download Build</a>
+        <a class="btn outline disabled" href="#" aria-disabled="true">GitHub</a>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <h2>Images</h2>
+      <div class="project-gallery" aria-label="Word Dash screenshots">
+        <img src="../../assets/Screenshots/Word Dash/Screenshot 2026-04-05 215451.png" alt="Word Dash screenshot 1" loading="lazy" />
+        <img src="../../assets/Screenshots/Word Dash/Screenshot 2026-04-05 215504.png" alt="Word Dash screenshot 2" loading="lazy" />
+        <img src="../../assets/Screenshots/Word Dash/Screenshot 2026-04-05 215513.png" alt="Word Dash screenshot 3" loading="lazy" />
+        <img src="../../assets/Screenshots/Word Dash/Screenshot 2026-04-05 215601.png" alt="Word Dash screenshot 4" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Gameplay Video</h2>
+      <div class="project-video-inline" aria-label="Word Dash gameplay video player">
+        <div class="project-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/fep_nQACTks"
+            title="Word Dash Gameplay"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <p class="project-video-caption">Watch Word Dash gameplay preview directly in the player above.</p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Description</h2>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Built in Unreal Engine 5.5 as a multiplayer word game using a Blueprint-first workflow.</li>
+        <li>Combines character-based gameplay with a custom word-game loop where players form or drop words.</li>
+        <li>Includes dedicated maps for main menu, lobby, travel flow, and gameplay levels.</li>
+        <li>Uses GameInstance for global flow, with GameMode and GameState handling match rules and shared session state.</li>
+        <li>Uses PlayerController and PlayerState for player-specific flow, interaction, and score tracking.</li>
+        <li>Includes a data-driven word list, save-game support, and full UI coverage with menu and HUD widgets.</li>
+        <li>Adds sound effects and interface polish to improve clarity and player experience.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>What I have done in this project</h2>
+      <ul class="project-about" style="margin:0; padding-left: 1.25rem;">
+        <li>Built the core multiplayer word-game logic.</li>
+        <li>Set up the framework architecture for menu, gameplay, and session flow.</li>
+        <li>Added the main menu, lobby, HUD, pause menu, loading screen, and server/player list UI.</li>
+        <li>Implemented end-game and winner screens.</li>
+        <li>Added a leaderboard with accuracy tracking for players.</li>
+        <li>Created gameplay assets such as the word system, drop-letter system, and save-game system.</li>
+        <li>Added audio feedback, fonts, and visual polish for the interface.</li>
+        <li>Configured the project to cook and load the required maps for the game flow.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../../js/project-gallery-lightbox.js"></script>
+</body>
+</html>
