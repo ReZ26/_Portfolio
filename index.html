@@ -6,28 +6,47 @@
   <title>Shubham Bajaj - Game Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Roboto:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260406b" />
   <link rel="icon" href="assets/icons/unreal.png" type="image/png">
 </head>
 <body>
+  <div id="loading-sequence" class="loading-sequence" aria-live="polite">Remove
+    <div class="loading-panel">
+      <p class="loading-title">Booting Portfolio World</p>
+      <p class="loading-subtitle">Initializing missions, zones, and systems...</p>
+      <div class="loading-bar"><span id="loading-bar-fill"></span></div>
+    </div>
+  </div>
+
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-  <a class="engine-corner engine-left" href="#unity-projects" aria-label="Jump to Unity projects">
+  <a class="engine-corner engine-left" href="#unity-projects" aria-label="Jump to Unity zone">
     <img src="assets/icons/unity.png" alt="Unity" />
   </a>
-  <a class="engine-corner engine-right" href="#unreal-projects" aria-label="Jump to Unreal projects">
+  <a class="engine-corner engine-right" href="#unreal-projects" aria-label="Jump to Unreal zone">
     <img src="assets/icons/unreal.png" alt="Unreal Engine" />
   </a>
+
+  <aside class="progress-hud" id="progress-hud" aria-hidden="true">
+    <p class="hud-label">Mission Progress</p>
+    <div class="hud-row">
+      <p class="hud-zone" id="hud-zone-label">Spawn Zone</p>
+      <p class="hud-percent" id="hud-progress-percent">0%</p>
+    </div>
+    <div class="hud-track"><span id="hud-progress-fill"></span></div>
+  </aside>
 
   <header class="site-header">
     <div class="container header-row">
       <a href="#hero" class="logo">Shubham<span class="accent">.</span></a>
       <nav class="nav" id="nav">
-        <a href="#skills"><span class="nav-num">01.</span> Skills</a>
-        <a href="#unreal-projects"><span class="nav-num">02.</span> Unreal</a>
-        <a href="#unity-projects"><span class="nav-num">03.</span> Unity</a>
-        <a href="#contact"><span class="nav-num">04.</span> Contact</a>
+        <a href="#hero"><span class="nav-num">00.</span> Spawn</a>
+        <a href="#skills"><span class="nav-num">01.</span> Skills Zone</a>
+        <a href="#experience"><span class="nav-num">02.</span> Experience Zone</a>
+        <a href="#unreal-projects"><span class="nav-num">03.</span> Unreal Zone</a>
+        <a href="#unity-projects"><span class="nav-num">04.</span> Unity Zone</a>
+        <a href="#contact"><span class="nav-num">05.</span> Final Portal</a>
         <a href="assets/resume.pdf" class="btn resume-btn" download>Resume</a>
       </nav>
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
@@ -39,18 +58,32 @@
   </header>
 
   <main>
-   
-
-    <section id="hero" class="hero">
+    <section id="hero" class="hero zone-section" data-zone-name="Spawn Zone">
       <div class="container hero-layout">
         <div class="hero-content">
-          <p class="hero-greeting">Hi, my name is</p>
+          <p class="hero-greeting">Mission Entry Point</p>
           <h1 class="hero-name">Shubham Bajaj</h1>
           <h2 class="hero-tagline">I build <span class="typed-text"></span><span class="cursor">|</span></h2>
-          <p class="hero-summary">Gameplay Programmer focused on combat systems, multiplayer architecture, and immersive mechanics. Experienced in Unreal Engine (C++/Blueprints) and Unity, with a passion for building polished, scalable, and player-centric gameplay systems.</p>
+          <p class="hero-summary">Game Developer with 3 years of experience in Unreal Engine and Unity, building rewind systems, multiplayer gameplay, and polished player experiences.</p>
+
+          <div class="mission-stats" aria-label="Player progression stats">
+            <div class="mission-stat">
+              <span class="mission-stat-label">Years XP</span>
+              <strong class="mission-stat-value" data-counter="3">0</strong>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-stat-label">Missions Built</span>
+              <strong class="mission-stat-value" data-counter="8">0</strong>
+            </div>
+            <div class="mission-stat">
+              <span class="mission-stat-label">Core Systems</span>
+              <strong class="mission-stat-value" data-counter="20">0</strong>
+            </div>
+          </div>
+
           <div class="hero-ctas">
-            <a class="btn primary" href="#unreal-projects">View Projects</a>
-            <a class="btn outline" href="#contact">Get In Touch</a>
+            <a class="btn primary" href="#unreal-projects">Enter Missions</a>
+            <a class="btn outline" href="#contact">Open Channel</a>
           </div>
         </div>
 
@@ -61,38 +94,49 @@
       </div>
     </section>
 
-    <section id="skills" class="section">
-      <div class="container">
-        <h3 class="section-title"><span class="num">01.</span> Skills</h3>
+    <section id="skills" class="section zone-section" data-zone-name="Skills Zone">
+      <div class="container zone-shell">
+        <h3 class="section-title"><span class="num">01.</span> Skills Arsenal</h3>
+        <p class="zone-description">Core tools, engines, and languages used to build production-ready gameplay systems.</p>
         <div id="skills-list" class="skills-grid"></div>
       </div>
     </section>
 
-    <section id="unreal-projects" class="section">
-      <div class="container">
+    <section id="experience" class="section zone-section" data-zone-name="Experience Zone">
+      <div class="container zone-shell">
+        <h3 class="section-title"><span class="num">02.</span> Experience Log</h3>
+        <p class="zone-description">Career missions completed across engine programming, multiplayer systems, and gameplay architecture.</p>
+        <div id="experience-list" class="experience-grid"></div>
+      </div>
+    </section>
+
+    <section id="unreal-projects" class="section zone-section" data-zone-name="Unreal Projects Zone">
+      <div class="container zone-shell">
         <h3 class="section-title section-title-engine">
-          <span class="num">02.</span> Unreal Projects
+          <span class="num">03.</span> Unreal Missions
           <img src="assets/icons/unreal.png" alt="Unreal Engine" class="title-engine-icon" />
         </h3>
+        <p class="zone-description">High-impact gameplay prototypes, systems, and mechanics built in Unreal Engine.</p>
         <div id="unreal-projects-grid" class="projects-grid"></div>
       </div>
     </section>
 
-    <section id="unity-projects" class="section">
-      <div class="container">
+    <section id="unity-projects" class="section zone-section" data-zone-name="Unity Projects Zone">
+      <div class="container zone-shell">
         <h3 class="section-title section-title-engine">
-          <span class="num">03.</span> Unity Projects
+          <span class="num">04.</span> Unity Missions
           <img src="assets/icons/unity.png" alt="Unity" class="title-engine-icon" />
         </h3>
+        <p class="zone-description">Gameplay experiments and production pipelines developed with Unity.</p>
         <div id="unity-projects-grid" class="projects-grid"></div>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <h3 class="section-title"><span class="num">04.</span> Contact</h3>
-        <p class="contact-text">I am currently open to game development opportunities. If you want to discuss a role, project, or collaboration, I would love to connect.</p>
-        <a class="btn primary large" href="mailto:shubhambajaj3526@gmail.com">Say Hello</a>
+    <section id="contact" class="section contact-section zone-section" data-zone-name="Final Portal">
+      <div class="container zone-shell">
+        <h3 class="section-title"><span class="num">05.</span> Final Portal</h3>
+        <p class="contact-text">Ready to collaborate on your next game project, gameplay system, or technical design challenge.</p>
+        <a class="btn primary large" href="mailto:shubhambajaj3526@gmail.com">Start Mission</a>
         <div class="social-links">
           <a href="https://linkedin.com/in/shubham--bajaj" target="_blank" rel="noopener">LinkedIn</a>
           <a href="mailto:shubhambajaj3526@gmail.com">Email</a>
@@ -109,7 +153,7 @@
   </footer>
 
   <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
-  <script src="js/three-scene.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/three-scene.js?v=20260406b"></script>
+  <script src="js/main.js?v=20260406b"></script>
 </body>
 </html>
