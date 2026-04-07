@@ -170,6 +170,12 @@ function renderProjects(containerId, projects, fallbackEngine) {
       const hasSource = typeof p.source === 'string' && p.source.trim() !== '';
       const hasDownload = typeof p.download === 'string' && p.download.trim() !== '';
       const cardHref = hasDemo ? escapeHtml(p.demo) : '';
+      
+      // Check if this is Slimey Jump or Surprise Sprint
+      const isPlayableGame = p.title && (
+        p.title.toLowerCase().includes('slimey jump') || 
+        p.title.toLowerCase().includes('surprise sprint')
+      );
 
       return `
         <article class="project-card interactive-card ${hasDemo ? 'is-clickable' : ''}" data-engine="${escapeHtml(engine)}" ${hasDemo ? `data-href="${cardHref}" tabindex="0" role="link" aria-label="Open project ${escapeHtml(p.title || 'Untitled')}"` : ''}>
@@ -183,7 +189,8 @@ function renderProjects(containerId, projects, fallbackEngine) {
           <div class="project-links">
             ${hasDemo ? `<a href="${cardHref}" target="_blank" rel="noopener">Open</a>` : ''}
             ${hasSource ? `<a href="${escapeHtml(p.source)}" target="_blank" rel="noopener">Code</a>` : ''}
-            ${hasDownload ? `<a href="${escapeHtml(p.download)}" target="_blank" rel="noopener">Download</a>` : ''}
+            ${isPlayableGame && hasDownload ? `<a href="${escapeHtml(p.download)}" target="_blank" rel="noopener">Play Game</a>` : ''}
+            ${!isPlayableGame && hasDownload ? `<a href="${escapeHtml(p.download)}" target="_blank" rel="noopener">Download</a>` : ''}
           </div>
         </article>
       `;

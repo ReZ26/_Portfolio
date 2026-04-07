@@ -57,7 +57,8 @@
       "source": "",
       "engine": "Unreal",
       "video": "https://youtu.be/PvAs_mlONsE",
-      "tech": "UE5 C++/BP | Netcode"
+      "download": "https://drive.google.com/file/d/1KTuYCWKGz8Z8lP54AXXSWTS9zpkenebb/view?usp=sharing",
+      "tech": " Multiplayer "
     },
     {
       "title": "Word Dash",
@@ -68,7 +69,7 @@
       "engine": "Unreal",
       "video": "https://youtu.be/fep_nQACTks",
       "download": "https://drive.google.com/file/d/1NtKFE3bWKfmUJqSPo0bPUXLseTDry5Ni/view?usp=sharing",
-      "tech": "UE5 Blueprints | Multiplayer"
+      "tech": " Multiplayer"
     },
     {
       "title": "Legend of Indra vs Vritrasur",
@@ -77,7 +78,8 @@
       "demo": "projects/indra-vs-virtasure/",
       "source": "",
       "engine": "Unreal",
-      "tech": "UE5 C++/BP | Combat | Behavior Trees"
+      "download": "https://drive.google.com/file/d/1KTuYCWKGz8Z8lP54AXXSWTS9zpkenebb/view?usp=sharing",
+      "tech": " Combat | Behavior Trees"
     },
     {
       "title": "Isles Of Echoes On Cybertrom",
@@ -86,7 +88,8 @@
       "demo": "projects/quest-of-cybertron/",
       "source": "",
       "engine": "Unreal",
-      "tech": "UE5 | Quest Systems | State Management"
+      "download": "https://drive.google.com/drive/folders/1U-bXF7hFeeuFArOaMZmsjs0-0R1298MB?usp=sharing",
+      "tech": " Quest Systems | State Management"
     },
     {
       "title": "Reality Run",
@@ -96,7 +99,8 @@
       "source": "",
       "engine": "Unreal",
       "video": "https://youtu.be/uYjTa0nZxZw",
-      "tech": "UE5 C++/BP | Procedural Generation"
+      "download": "https://drive.google.com/file/d/18cGeN27hQ_SrZ_nFJm-KtLnjEqb0PDZ2/view?usp=sharing",
+      "tech": " GGJ2026 | Nomination: Best Gameplay Factor "
     },
     {
       "title": "Rewind Component System",
@@ -106,7 +110,8 @@
       "source": "",
       "engine": "Unreal",
       "video": "https://youtu.be/pVjgrQKkfMY",
-      "tech": "UE5 Blueprints | State Management"
+      "download": "https://drive.google.com/file/d/1_xjGCZ4UUGmQ4PpV76XJpO56VwVE2p9s/view?usp=sharing",
+      "tech": " State Management"
     },
     {
       "title": "RPG Systems Architecture",
@@ -115,7 +120,7 @@
       "demo": "projects/prototype-for-rpg-game/",
       "source": "",
       "engine": "Unreal",
-      "tech": "UE5 C++/BP | Systems Design"
+      "tech": " Systems Design"
     },
     {
       "title": "Lost Cure",
@@ -126,7 +131,7 @@
       "engine": "Unreal",
       "video": "https://youtu.be/pio_Z0jXJao",
       "download": "https://drive.google.com/file/d/1XuO6Yjj8IeXFzfi7K7IWf9BLmHmuNFM4/view?usp=sharing",
-      "tech": "UE5 | Narrative Systems"
+      "tech": " Narrative Systems"
     },
     {
       "title": "It's Me Pico",
@@ -135,7 +140,8 @@
       "demo": "projects/paint-runner/",
       "source": "",
       "engine": "Unity",
-      "tech": "Unity 2023 C# | AI | Economy Systems"
+      "download": "https://drive.google.com/file/d/1vaSEFGQjiQs7WRwmIqKBS-HS8jrjfDl1/view?usp=sharing",
+      "tech": " AI | Economy Systems"
     },
     {
       "title": "Slimey Jump",
@@ -144,8 +150,8 @@
       "demo": "projects/slimey-jump/",
       "source": "",
       "engine": "Unity",
-      "video": "https://shubham-bajaj.itch.io/slime-game",
-      "tech": "Unity 6 C# | Procedural Generation | Progression"
+      "download": "https://shubham-bajaj.itch.io/slime-game",
+      "tech": " Procedural Generation | Progression"
     },
     {
       "title": "Bubble Trap",
@@ -155,7 +161,7 @@
       "source": "",
       "engine": "Unity",
       "download": "https://drive.google.com/file/d/1cNzXhPa7kWTm0vW5IG1_v5xBtCUH_5g4/view?usp=sharing",
-      "tech": "Unity 6 C# | Physics | AI"
+      "tech": " Physics | AI"
     },
     {
       "title": "Word Game",
@@ -164,7 +170,7 @@
       "demo": "projects/word-game/",
       "source": "",
       "engine": "Unity",
-      "tech": "Unity C# | Data Structures | State Management"
+      "tech": "Data Structures | State Management"
     },
     {
       "title": "Surprise Sprint",
@@ -175,7 +181,7 @@
       "engine": "Unity",
       "video": "https://youtu.be/Xo9sye7HXSI",
       "download": "https://shubham-bajaj.itch.io/surprise-sprint",
-      "tech": "Unity 6 C# | Event Systems"
+      "tech": " Event Systems"
     }
   ],
   "education": "Bachelor of Engineering - Computer Science (Graphics And Gaming), Chandigarh University, Mohali, Punjab, IN (2022-2026) — CGPA: 8.41"
