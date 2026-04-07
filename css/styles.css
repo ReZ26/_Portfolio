@@ -1968,6 +1968,42 @@ main, .site-header, .site-footer, .engine-corner { position: relative; z-index: 
   transition: color 0.3s ease;
 }
 
+/* ===== Unified Bullet Point Styling ===== */
+.project-about ul,
+.project-about ol {
+  margin: 20px 0 !important;
+  padding: 0 0 0 1.5rem !important;
+  font-size: 1.05rem !important;
+  list-style-position: outside !important;
+  list-style-type: disc !important;
+  display: block !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+.project-about li {
+  margin-bottom: 14px !important;
+  padding-left: 0.5rem !important;
+  line-height: 1.75 !important;
+  color: rgba(200, 210, 220, 0.95) !important;
+  display: list-item !important;
+  list-style: disc outside !important;
+  text-align: left !important;
+  letter-spacing: normal !important;
+  font-weight: 400 !important;
+  transition: all 0.3s ease !important;
+}
+
+.project-about li::marker {
+  color: var(--accent-2) !important;
+  font-size: 1.1em !important;
+}
+
+.project-about li:hover {
+  color: rgba(255, 255, 255, 0.98) !important;
+  transform: translateX(4px) !important;
+}
+
 .project-hero:hover .project-about {
   color: var(--text);
 }
@@ -2649,13 +2685,25 @@ main, .site-header, .site-footer, .engine-corner { position: relative; z-index: 
 
   .project-about ul,
   .project-about ol {
-    margin-left: 1rem;
-    font-size: 0.95rem;
+    margin: 20px 0 !important;
+    padding: 0 0 0 1.5rem !important;
+    font-size: 1.05rem !important;
+    list-style-position: outside !important;
+    list-style-type: disc !important;
+    display: block !important;
   }
 
   .project-about li {
-    margin-bottom: 6px;
-    line-height: 1.6;
+    margin-bottom: 14px !important;
+    padding-left: 0.5rem !important;
+    line-height: 1.75 !important;
+    color: rgba(200, 210, 220, 0.95) !important;
+    display: list-item !important;
+    list-style: disc outside !important;
+  }
+  
+  .project-about li::marker {
+    color: var(--accent-2) !important;
   }
 }
 
@@ -2963,13 +3011,25 @@ main, .site-header, .site-footer, .engine-corner { position: relative; z-index: 
 
   .project-about ul,
   .project-about ol {
-    margin-left: 1.2rem;
-    font-size: 1rem;
+    margin: 18px 0 !important;
+    padding: 0 0 0 1.4rem !important;
+    font-size: 1rem !important;
+    list-style-position: outside !important;
+    list-style-type: disc !important;
+    display: block !important;
   }
 
   .project-about li {
-    margin-bottom: 8px;
-    line-height: 1.65;
+    margin-bottom: 12px !important;
+    padding-left: 0.5rem !important;
+    line-height: 1.70 !important;
+    color: rgba(200, 210, 220, 0.95) !important;
+    display: list-item !important;
+    list-style: disc outside !important;
+  }
+  
+  .project-about li::marker {
+    color: var(--accent-2) !important;
   }
 }
 
