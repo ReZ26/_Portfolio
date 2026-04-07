@@ -1,4 +1,6 @@
 ﻿(function () {
+  'use strict';
+
   const galleries = Array.from(document.querySelectorAll('.project-gallery'));
   if (galleries.length) {
     const slides = galleries.flatMap((gallery) =>
@@ -15,7 +17,7 @@
       overlay.innerHTML = [
         '<button class="gallery-lightbox-btn close" type="button" aria-label="Close image viewer">&times;</button>',
         '<button class="gallery-lightbox-btn prev" type="button" aria-label="Previous image">&#10094;</button>',
-        '<img class="gallery-lightbox-image" src="data:," alt="" />',
+        '<img class="gallery-lightbox-image" src="data:," alt="" loading="lazy" />',
         '<button class="gallery-lightbox-btn next" type="button" aria-label="Next image">&#10095;</button>',
         '<p class="gallery-lightbox-caption"></p>'
       ].join('');
@@ -58,28 +60,28 @@
         const clickedAlt = clickedImage.getAttribute('alt') || 'Project screenshot';
         const index = slides.findIndex((slide) => slide.src === clickedSrc && slide.alt === clickedAlt);
         openViewer(index >= 0 ? index : 0);
-      });
+      }, { passive: true });
 
       prevBtn.addEventListener('click', function () {
         renderSlide(activeIndex - 1);
-      });
+      }, { passive: true });
 
       nextBtn.addEventListener('click', function () {
         renderSlide(activeIndex + 1);
-      });
+      }, { passive: true });
 
-      closeBtn.addEventListener('click', closeViewer);
+      closeBtn.addEventListener('click', closeViewer, { passive: true });
 
       overlay.addEventListener('click', function (event) {
         if (event.target === overlay) closeViewer();
-      });
+      }, { passive: true });
 
       document.addEventListener('keydown', function (event) {
         if (!overlay.classList.contains('open')) return;
         if (event.key === 'Escape') closeViewer();
         if (event.key === 'ArrowLeft') renderSlide(activeIndex - 1);
         if (event.key === 'ArrowRight') renderSlide(activeIndex + 1);
-      });
+      }, { passive: false });
     }
   }
 

@@ -10,6 +10,8 @@
   const objects = [];
   let mouseX = 0;
   let mouseY = 0;
+  let animationId = null;
+  let isWebGLSupported = true;
 
   function init() {
     const canvas = document.getElementById('bg-canvas');
@@ -25,37 +27,40 @@
     camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 5000);
     camera.position.z = 100;
 
-    renderer = new THREE.WebGLRenderer({ 
-      canvas, 
-      alpha: true, 
-      antialias: true,
-      powerPreference: 'high-performance'
-    });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.shadowMap.enabled = true;
+    try {
+      renderer = new THREE.WebGLRenderer({ 
+        canvas, 
+        alpha: true, 
+        antialias: false,
+        powerPreference: 'high-performance',
+        failIfMajorPerformanceCaveat: true
+      });
+    } catch (e) {
+      console.warn('WebGL not supported, disabling 3D background');
+      isWebGLSupported = false;
+      return;
+    }
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.shadowMap.enabled = false;
+    renderer.shadowMap.type = THREE.BasicShadowMap;
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const light1 = new THREE.PointLight(0xff00ff, 2);
+    const light1 = new THREE.PointLight(0xff00ff, 1.5);
     light1.position.set(150, 150, 150);
-    light1.castShadow = true;
     scene.add(light1);
 
-    const light2 = new THREE.PointLight(0x00d9ff, 1.8);
+    const light2 = new THREE.PointLight(0x00d9ff, 1.2);
     light2.position.set(-150, -150, 100);
-    light2.castShadow = true;
     scene.add(light2);
-
-    const light3 = new THREE.PointLight(0xffd700, 1.2);
-    light3.position.set(0, 150, -150);
-    scene.add(light3);
 
     createGeometries();
     createParticles();
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
     window.addEventListener('resize', onWindowResize);
 
     animate();
@@ -65,15 +70,15 @@
     const colors = [0xff00ff, 0x00d9ff, 0xffd700];
     const geometryDefs = [
       new THREE.BoxGeometry(20, 20, 20),
-      new THREE.SphereGeometry(16, 32, 32),
-      new THREE.ConeGeometry(16, 25, 32),
+      new THREE.SphereGeometry(16, 16, 16),
+      new THREE.ConeGeometry(16, 25, 16),
       new THREE.OctahedronGeometry(16),
-      new THREE.TorusGeometry(12, 4, 16, 100),
+      new THREE.TorusGeometry(12, 4, 8, 50),
       new THREE.IcosahedronGeometry(14),
       new THREE.TetrahedronGeometry(20),
       new THREE.DodecahedronGeometry(12),
-      new THREE.TorusKnotGeometry(8, 3, 100, 16),
-      new THREE.CylinderGeometry(10, 10, 25, 32),
+      new THREE.CylinderGeometry(10, 10, 25, 16),
+      new THREE.ConeGeometry(12, 20, 12),
     ];
 
     const positions = [
@@ -96,10 +101,11 @@
       const material = new THREE.MeshPhongMaterial({
         color,
         emissive: color,
-        emissiveIntensity: 0.4,
-        shininess: 120,
+        emissiveIntensity: 0.3,
+        shininess: 80,
         side: THREE.DoubleSide,
         wireframe: false,
+        fog: true,
       });
 
       const mesh = new THREE.Mesh(geometry, material);
@@ -109,16 +115,14 @@
         Math.random() * Math.PI,
         Math.random() * Math.PI
       );
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
 
       scene.add(mesh);
 
       objects.push({
         mesh,
-        rotX: (Math.random() - 0.5) * 0.006,
-        rotY: (Math.random() - 0.5) * 0.006,
-        rotZ: (Math.random() - 0.5) * 0.006,
+        rotX: (Math.random() - 0.5) * 0.004,
+        rotY: (Math.random() - 0.5) * 0.004,
+        rotZ: (Math.random() - 0.5) * 0.004,
         origX: pos.x,
         origY: pos.y,
         origZ: pos.z,
@@ -128,7 +132,7 @@
 
   function createParticles() {
     const geometry = new THREE.BufferGeometry();
-    const particleCount = 300;
+    const particleCount = 150;
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
@@ -141,13 +145,64 @@
 
     const material = new THREE.PointsMaterial({
       color: 0xff00ff,
-      size: 1.5,
+      size: 1,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.4,
+      fog: true,
     });
 
     const particles = new THREE.Points(geometry, material);
+    scene.add(particles);
+
+    objects.push({
+      mesh: particles,
+      rotX: 0.0001,
+      rotY: 0.0002,
+      rotZ: 0.00015,
+      origX: 0,
+      origY: 0,
+      origZ: 0,
+    });
+  }
+
+  function onMouseMove(e) {
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
+  }
+
+  function onWindowResize() {
+    if (!isWebGLSupported) return;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+
+  function animate() {
+    if (!isWebGLSupported) return;
+
+    animationId = requestAnimationFrame(animate);
+
+    objects.forEach((obj) => {
+      obj.mesh.rotation.x += obj.rotX;
+      obj.mesh.rotation.y += obj.rotY;
+      obj.mesh.rotation.z += obj.rotZ;
+
+      obj.mesh.position.x = obj.origX + (mouseX - 0.5) * 50;
+      obj.mesh.position.y = obj.origY + (mouseY - 0.5) * 50;
+    });
+
+    renderer.render(scene, camera);
+  }
+
+  window.addEventListener('load', init);
+
+  window.addEventListener('beforeunload', () => {
+    if (animationId) cancelAnimationFrame(animationId);
+  });
+})();
     scene.add(particles);
 
     objects.push({

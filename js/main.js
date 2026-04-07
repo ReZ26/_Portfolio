@@ -1,4 +1,11 @@
-﻿﻿// ===== Typing Effect =====
+﻿﻿// ===== Performance Optimization =====
+const requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame;
+let typeEffectTimeout = null;
+
+// Reduce motion preference detection
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ===== Typing Effect =====
 const typedTextEl = document.querySelector('.typed-text');
 const phrases = ['combat systems.', 'multiplayer architectures.', 'responsive player mechanics.', 'scalable gameplay frameworks.'];
 let phraseIndex = 0;
@@ -7,6 +14,11 @@ let isDeleting = false;
 
 function typeEffect() {
   if (!typedTextEl) return;
+
+  if (prefersReducedMotion) {
+    typedTextEl.textContent = phrases[phraseIndex];
+    return;
+  }
 
   const currentPhrase = phrases[phraseIndex];
 
@@ -29,7 +41,7 @@ function typeEffect() {
     typeSpeed = 340;
   }
 
-  setTimeout(typeEffect, typeSpeed);
+  typeEffectTimeout = setTimeout(typeEffect, typeSpeed);
 }
 
 // ===== Data Load and Render =====
@@ -39,26 +51,51 @@ const BLOCKED_SKILLS = new Set([
   'multiplayer networking'
 ]);
 
+// Debounce helper for efficient rendering
+function debounce(func, delay) {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
+// Throttle helper for scroll events
+function throttle(func, limit) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
+
 async function loadCV() {
   try {
-    const res = await fetch('data/cv.json', { cache: 'no-store' });
+    const res = await fetch('data/cv.json', { 
+      cache: 'force-cache',
+      priority: 'high'
+    });
     const cv = await res.json();
 
     const sanitizedSkills = (cv.skills || []).filter(
       (skill) => !BLOCKED_SKILLS.has(String(skill || '').trim().toLowerCase())
     );
 
-    renderSkills(sanitizedSkills);
-    renderExperience(cv.experience || []);
+    // Render in optimized chunks
+    requestAnimFrame(() => renderSkills(sanitizedSkills));
+    requestAnimFrame(() => renderExperience(cv.experience || []));
 
     const allProjects = cv.projects || [];
     const unrealProjects = allProjects.filter((p) => (p.engine || '').toLowerCase().includes('unreal'));
     const unityProjects = allProjects.filter((p) => (p.engine || '').toLowerCase().includes('unity'));
 
-    renderProjects('unreal-projects-grid', unrealProjects, 'Unreal');
-    renderProjects('unity-projects-grid', unityProjects, 'Unity');
+    requestAnimFrame(() => renderProjects('unreal-projects-grid', unrealProjects, 'Unreal'));
+    requestAnimFrame(() => renderProjects('unity-projects-grid', unityProjects, 'Unity'));
 
-    initInteractiveCards();
+    requestAnimFrame(() => initInteractiveCards());
   } catch (e) {
     console.error('Failed to load cv.json', e);
   }
@@ -286,7 +323,7 @@ function initZoneHUD() {
   const sections = Array.from(document.querySelectorAll('.zone-section'));
   if (!zoneLabel || !progressFill || !sections.length) return;
 
-  const updateProgress = () => {
+  const updateProgress = throttle(() => {
     const scrollTop = window.scrollY || window.pageYOffset || 0;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const maxScroll = Math.max(1, docHeight);
@@ -294,7 +331,6 @@ function initZoneHUD() {
     progressFill.style.width = `${progress}%`;
     if (progressPercent) progressPercent.textContent = `${Math.round(progress)}%`;
 
-    // Update zone label based on current scroll position
     let currentZone = sections[0].getAttribute('data-zone-name') || 'Mission Zone';
     
     sections.forEach((section) => {
@@ -305,21 +341,19 @@ function initZoneHUD() {
     });
     
     zoneLabel.textContent = currentZone;
-  };
+  }, 100);
 
   window.addEventListener('scroll', updateProgress, { passive: true });
   window.addEventListener('resize', updateProgress);
 
-  // Initial update
   updateProgress();
 }
 
 function initInteractiveCards() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (prefersReducedMotion) return;
 
   const cards = document.querySelectorAll('.interactive-card');
   cards.forEach((card) => {
-    // Add click ripple effect only - no tilting
     card.addEventListener('click', function(e) {
       const ripple = document.createElement('span');
       const rect = this.getBoundingClientRect();
@@ -348,51 +382,35 @@ function initInteractiveCards() {
 }
 
 function initParallax() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (prefersReducedMotion) return;
 
   const heroVisual = document.querySelector('.hero-visual');
   const engineIcons = document.querySelectorAll('.engine-corner');
   const progressHud = document.querySelector('.progress-hud');
-  const skillItems = document.querySelectorAll('.skill-item');
   
   if (!heroVisual && !engineIcons.length) return;
 
-  window.addEventListener(
-    'scroll',
-    () => {
-      const scrollY = window.scrollY;
-      const scrollVelocity = Math.min(scrollY * 0.02, 10);
-      
-      if (heroVisual) {
-        const offset = Math.min(scrollY * 0.12, 40);
-        const rotation = scrollY * 0.02;
-        heroVisual.style.transform = `translateY(${offset}px) rotateZ(${rotation}deg)`;
-      }
+  const handleScroll = throttle(() => {
+    const scrollY = window.scrollY;
+    const scrollVelocity = Math.min(scrollY * 0.02, 10);
+    
+    if (heroVisual) {
+      const offset = Math.min(scrollY * 0.08, 30);
+      heroVisual.style.transform = `translateY(${offset}px)`;
+    }
 
-      // Parallax for engine icons with sine wave
-      engineIcons.forEach((icon, index) => {
-        const offset = scrollY * (0.05 + index * 0.02);
-        const sway = Math.sin(scrollY * 0.01) * 5;
-        icon.style.transform = `translateY(${offset + sway}px) rotate(${scrollY * 0.05}deg)`;
-      });
+    engineIcons.forEach((icon, index) => {
+      const offset = scrollY * (0.04 + index * 0.01);
+      icon.style.transform = `translateY(${offset}px)`;
+    });
 
-      // Parallax for HUD with glow intensity
-      if (progressHud) {
-        const offset = scrollY * 0.03;
-        const glowIntensity = 0.1 + (scrollVelocity / 10) * 0.5;
-        progressHud.style.transform = `translateY(${offset}px)`;
-        progressHud.style.filter = `drop-shadow(0 0 ${20 * glowIntensity}px rgba(0, 247, 255, ${glowIntensity}))`;
-      }
+    if (progressHud) {
+      const offset = scrollY * 0.02;
+      progressHud.style.transform = `translateY(${offset}px)`;
+    }
+  }, 50);
 
-      // Parallax for skill items with wave effect
-      skillItems.forEach((item, index) => {
-        const offset = scrollY * 0.01 * (index % 3 + 1);
-        const wave = Math.sin((scrollY + index * 100) * 0.005) * 3;
-        item.style.transform = `translateX(${offset + wave}px)`;
-      });
-    },
-    { passive: true }
-  );
+  window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 function initMissionCounters() {

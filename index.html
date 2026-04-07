@@ -2,16 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Shubham Bajaj - Game Developer</title>
+  
+  <!-- Preconnect to external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Roboto:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  
+  <!-- Critical CSS inline or prioritized -->
   <link rel="stylesheet" href="css/styles.css?v=20260406b" />
+  
+  <!-- Font loading optimization -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Roboto:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=Roboto:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet" /></noscript>
+  
+  <!-- Favicon with prefetch -->
   <link rel="icon" href="assets/icons/unreal.png" type="image/png">
+  <link rel="prefetch" href="assets/icons/unity.png" />
+  
+  <!-- Performance optimization -->
+  <meta name="theme-color" content="#0a0e27">
+  <meta name="description" content="Gameplay Programmer - 3 years of experience with Unreal Engine and Unity">
 </head>
 <body>
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true" width="1920" height="1080"></canvas>
 
   <div id="loading-sequence" class="loading-sequence" aria-live="polite">
     <div class="loading-panel">
@@ -190,10 +205,25 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.161.0/examples/js/loaders/FBXLoader.js"></script>
-  <script src="js/three-bg.js?v=20260406b"></script>
-  <script src="js/three-scene.js?v=20260406b"></script>
-  <script src="js/main.js?v=20260406b"></script>
+  <!-- Performance optimization: lazy load 3D background scripts -->
+  <script defer src="https://unpkg.com/three@0.161.0/build/three.min.js"></script>
+  <script defer src="https://unpkg.com/three@0.161.0/examples/js/loaders/FBXLoader.js"></script>
+  <script defer src="js/three-bg.js?v=20260406b"></script>
+  <script defer src="js/three-scene.js?v=20260406b"></script>
+  <script defer src="js/main.js?v=20260406b"></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    // Log performance metrics
+    if (window.performance && window.performance.timing) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const perfData = window.performance.timing;
+          const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+          console.log('Portfolio Load Time:', pageLoadTime + 'ms');
+        }, 0);
+      });
+    }
+  </script>
 </body>
 </html>
