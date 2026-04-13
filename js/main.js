@@ -213,10 +213,14 @@ function renderProjects(containerId, projects, fallbackEngine) {
         p.title.toLowerCase().includes('slimey jump') || 
         p.title.toLowerCase().includes('surprise sprint')
       );
+      
+      // Check if project is shipped
+      const isShipped = p.shipped === true;
 
       return `
         <article class="project-card interactive-card ${hasDemo ? 'is-clickable' : ''}" data-engine="${escapeHtml(engine)}" ${hasDemo ? `data-href="${cardHref}" tabindex="0" role="link" aria-label="Open project ${escapeHtml(p.title || 'Untitled')}"` : ''}>
           <img class="project-thumb" src="${escapeHtml(imageSrc)}" alt="${escapeHtml(p.title || 'Project preview')}" loading="lazy" />
+          ${isShipped ? '<div class="shipped-badge">Shipped</div>' : ''}
           <div class="project-meta">
             <span class="engine-badge"><img src="${engineIcon}" alt="" /> ${escapeHtml(engine || 'Game Dev')}</span>
             ${p.tech ? `<span class="tech-badge">${escapeHtml(p.tech)}</span>` : ''}
