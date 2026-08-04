@@ -207,10 +207,11 @@ function renderProjects(containerId, projects, fallbackEngine) {
       const hasDownload = typeof p.download === 'string' && p.download.trim() !== '';
       const cardHref = hasDemo ? escapeHtml(p.demo) : '';
       
-      // Check if this is Slimey Jump or Surprise Sprint
+      // Check if this is Slimey Jump, Surprise Sprint, or It's Me Pico
       const isPlayableGame = p.title && (
         p.title.toLowerCase().includes('slimey jump') || 
-        p.title.toLowerCase().includes('surprise sprint')
+        p.title.toLowerCase().includes('surprise sprint') ||
+        p.title.toLowerCase().includes('pico')
       );
       
       // Check if project is shipped
