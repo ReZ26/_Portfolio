@@ -1,4 +1,4 @@
-﻿﻿// ===== Performance Optimization =====
+// ===== Performance Optimization =====
 const requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame;
 let typeEffectTimeout = null;
 
@@ -74,8 +74,7 @@ function throttle(func, limit) {
 
 async function loadCV() {
   try {
-    const res = await fetch('data/cv.json', { 
-      cache: 'force-cache',
+    const res = await fetch('data/cv.json?v=20260804', { 
       priority: 'high'
     });
     const cv = await res.json();
@@ -579,12 +578,26 @@ function initHeroImageSwitcher() {
     return projectImages[randomIndex];
   }
 
+  const devIcon = document.querySelector('.gamedev-icon');
+
+  function updateEngineIcon(imagePath) {
+    if (!devIcon) return;
+    const lower = imagePath.toLowerCase();
+    const isUnity = lower.includes('paint runner') || 
+                    lower.includes('slimey jump') || 
+                    lower.includes('bubble trap') || 
+                    lower.includes('surprise sprint') || 
+                    lower.includes('word game');
+    devIcon.src = isUnity ? 'assets/icons/unity.png' : 'assets/icons/unreal.png';
+  }
+
   function switchImage() {
     // Switch to random project image with fade effect
     introArt.style.opacity = '0.7';
     introArt.style.transition = 'all 0.6s ease-in-out';
     const randomImage = getRandomImage();
     introArt.src = randomImage;
+    updateEngineIcon(randomImage);
     setTimeout(() => {
       introArt.style.opacity = '1';
     }, 100);
